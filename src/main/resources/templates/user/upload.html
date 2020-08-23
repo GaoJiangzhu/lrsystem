@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>Dropzone.js - Ace Admin</title>
+
+    <meta name="description" content="Drag &amp; drop file upload with image preview" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="../ace/assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../ace/components/font-awesome/css/font-awesome.css" />
+
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="../ace/components/dropzone/dist/dropzone.css" />
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="../ace/assets/css/ace-fonts.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="../ace/assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../ace/assets/css/ace-part2.css" class="ace-main-stylesheet" />
+    <![endif]-->
+    <link rel="stylesheet" href="../ace/assets/css/ace-skins.css" />
+    <link rel="stylesheet" href="../ace/assets/css/ace-rtl.css" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../ace/assets/css/ace-ie.css" />
+    <![endif]-->
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+    <script src="../ace/components/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="../ace/components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .mask_div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 120px;
+            background: rgba(101, 101, 101, 0.6);
+            color: #ffffff;
+            opacity: 0;
+            border-radius:20px;
+        }
+        .mask_div h3 {
+            text-align: center;
+        }
+
+        .mask_meta:hover div.mask_div {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+<div th:replace="fragments/newjs :: upload_component" class="col-xs-10 col-sm-6 "></div>
+
+<!--[if !IE]> -->
+<script src="../ace/components/jquery/dist/jquery.js"></script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script src="../ace/components/jquery.1x/dist/jquery.js"></script>
+<![endif]-->
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='../ace/components/_mod/jquery.mobile.custom/jquery.mobile.custom.js'>"+"<"+"/script>");
+</script>
+<script src="../ace/components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../ace/components/dropzone/dist/dropzone.js"></script>
+<script type="text/javascript">
+    jQuery(function($){
+        try {
+            Dropzone.autoDiscover = false;
+            $('#dropzone').dropzone({
+                url: "/upload/uploading",
+                type:"post",
+                previewTemplate: $('#preview-template').html(),
+                thumbnailHeight: 120,
+                thumbnailWidth: 120,
+                addRemoveLinks: true,
+                dictRemoveFile: "删除文件",
+                maxFilesize: 0.5,
+                acceptedFiles: ".xls,.xlsx",
+                paramName: "file",
+                uploadMultiple:true,
+                dictDefaultMessage :
+                    '<span class="bigger-150 bolder"><i class="ace-icon fa fa-caret-right red"></i> Drop files</span> to upload \
+                    <span class="smaller-80 grey">(or click)</span> <br /> \
+                    <i class="upload-icon ace-icon fa fa-cloud-upload blue fa-3x"></i>'
+                ,
+
+                thumbnail: function(file, dataUrl) {
+                    if (file.previewElement) {
+                        $(file.previewElement).removeClass("dz-file-preview");
+                        var images = $(file.previewElement).find("[data-dz-thumbnail]").each(function() {
+                            var thumbnailElement = this;
+                            thumbnailElement.alt = file.name;
+                            thumbnailElement.src = dataUrl;
+                        });
+                        setTimeout(function() { $(file.previewElement).addClass("dz-image-preview"); }, 1);
+                    }
+                },
+                init: function () {
+                    var myDropzone = this;
+                    myDropzone.on('success', function (files, response) {
+                        $("#uploadpath").val($("#uploadpath").val()+","+response.aaData);
+                        //文件上传成功之后的操作
+                        console.log(response);
+                    });
+                }
+            });
+        } catch(e) {
+            alert('Dropzone.js does not support older browsers!');
+        }
+    });
+
+    function submit(){
+        $.ajax({
+            url:"/user/submit",
+            data:{path:$("#uploadpath").val()},
+            type:"post",
+            datatype:"json",
+            success:function (data) {
+                if (data.status == SUCCESS) {
+                    DuzUtils.notifySuccess(data.msg);
+                }else {
+                    DuzUtils.notifyError(data.msg);
+                }
+            },
+            error:function (data) {
+                console.log(data);
+            }
+        })
+    }
+</script>
+
+</body>
+</html>

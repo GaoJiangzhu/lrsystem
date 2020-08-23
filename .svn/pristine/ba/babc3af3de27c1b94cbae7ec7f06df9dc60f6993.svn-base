@@ -1,0 +1,24 @@
+.content {
+    .navbar {
+        >*,
+        .form-inline>* {
+            margin-right: 10px;
+        }
+        select {
+            width: 150px;
+        }
+    }
+}
+
+.c-menu-list {
+    width: 200px;
+}
+
+.switch-group {
+    .btn {
+        padding: 4px 8px 5px;
+        &.active {
+            color: #1879FF;
+        }
+    }
+}

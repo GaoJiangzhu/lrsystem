@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link href="../new/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../new/css/style.css"/>
+    <link href="../new/assets/css/codemirror.css" rel="stylesheet">
+    <link rel="stylesheet" href="../new/assets/css/ace.min.css" />
+    <link rel="stylesheet" href="../new/font/css/font-awesome.min.css" />
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../new/assets/css/ace-ie.min.css" />
+    <![endif]-->
+    <script src="../new/js/jquery-1.9.1.min.js"></script>
+    <script src="../new/assets/js/bootstrap.min.js"></script>
+    <script src="../new/assets/js/typeahead-bs2.min.js"></script>
+    <script src="../new/assets/js/jquery.dataTables.min.js"></script>
+    <script src="../new/assets/js/jquery.dataTables.bootstrap.js"></script>
+    <script src="../new/assets/layer/layer.js" type="text/javascript" ></script>
+    <script src="../new/assets/laydate/laydate.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../business/common.js"></script>
+    <script type="text/javascript" src="../business/base.js"></script>
+    <title>管理权限</title>
+</head>
+
+<body>
+<div class="margin clearfix">
+    <div th:replace="fragments/newjs :: search"></div>
+    <div class="border clearfix">
+       <span class="l_f">
+        <a href="/corporation/add" id="corporation_add" class="btn btn-warning" title="添加"><i class="fa fa-plus"></i> 添加</a>
+        <a onclick="dele()" id="corporation_del" class="btn btn-danger" title="批量删除"><i class="fa fa-trash"></i> 批量删除</a>
+       </span>
+    </div>
+    <div class="compete_list">
+        <table id="sample-table" class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th class="center" id="checkboxtitle"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
+                <th class="center" id="orderNum">序号</th>
+                <th>代理公司</th>
+                <th class="hidden-480" id="operation">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    function init(param) {
+        var dutyTable = $("#sample-table").dataTable({
+            "destroy": true,       //销毁表格对象
+            "aLengthMenu": [10, 15, 20, 50, 100],  //用户可自选每页展示数量 5条或10条
+            "searching": false,//禁用搜索（搜索框）
+            "lengthChange": true,
+            "paging": true,//开启表格分页
+            "bProcessing": true,
+            "bServerSide": true,
+            "bAutoWidth": false,
+            "deferRender": true,//延迟渲染
+            "iDisplayLength": 10,
+            "iDisplayStart": 0,
+
+            "select": {
+                style: 'os',
+                selector: 'td:first-child'
+            },
+            "ordering": false,//全局禁用排序
+            "ajax": {  //ajax方式向后台发送请求
+                "type": "POST",
+                "url": "data",
+                "data":param,//传递的数据
+                "dataType": "json"
+            },
+            "columns": [//对接收到的json格式数据进行处理，data为json中对应的key
+                {"data": "id"},
+                // {"data": "id"},
+                {
+                    "data": "index",
+                    "render": function (data, type, row, meta) {
+                        var startIndex = meta.settings._iDisplayStart;
+                        return startIndex + meta.row + 1;
+                    }
+                },
+
+                {"data": "proxyCorName"},
+                {
+                    "data": "id",
+                    "render": function (data, type, row, meta) {
+                        return "<a href=\"/corporation/add?id="+data+"\" class=\"btn btn-xs btn-info\"><i class=\"fa fa-trash bigger-120\"></i>编辑</a>";
+                    }
+                },
+
+            ],
+            //渲染
+            "columnDefs": [
+                {
+                    "render": function (data, type, row) {
+                        return '<label><input type="checkbox" class="ace" value="' + data + '"><span class="lbl"></span></label';
+                    },
+                    "targets": 0 //指定渲染列：第一列(渲染第一列为单选框，data自动匹配为  {"data":"id"}中数据）
+                }
+            ]
+            ,
+            "oLanguage": { // 国际化配置
+                "sProcessing": "正在获取数据，请稍后...",
+                "sLengthMenu": "显示 _MENU_ 条",
+                "sZeroRecords": "没有找到数据",
+                "sInfo": "从 _START_ 到  _END_ 条记录 总记录数为 _TOTAL_ 条",
+                "sInfoEmpty": "记录数为0",
+                "sInfoFiltered": "(全部记录数 _MAX_ 条)",
+                "sInfoPostFix": "",
+                "sSearch": "查询",
+                "sUrl": "",
+                "oPaginate": {
+                    "sFirst": "第一页",
+                    "sPrevious": "上一页",
+                    "sNext": "下一页",
+                    "sLast": "最后一页"
+                }
+            }
+
+        });
+    }
+    init("");
+
+    function dele(id) {
+        if (isBlank(id)){
+            DuzUtils.notifyWarning("参数错误数据为空");
+            return;
+        }
+        $.ajax({
+            url:"del",
+            type:"post",
+            datatype:"json",
+            data:{id:id},
+            success:function (data) {
+                if (data.status == SUCCESS){
+                    window.location.href = "/auth/list";
+                } else{
+                    DuzUtils.notifyError(data.msg);
+                }
+            },
+            error:function (data) {
+                console.log(data);
+            }
+        })
+    }
+
+    function dele() {
+        // var nTrs = dutyTable.fnGetNodes();
+        var nTrs = $("input[type=checkbox]:checked");
+        if (nTrs.length == 0|| (nTrs.length==1 && (nTrs[0].value=="on"||nTrs[0].value==""))){
+            DuzUtils.notifyWarning("请选择要删除的数据");
+            return;
+        }
+
+        var ids = "";
+        for (var i = 0; i < nTrs.length; i++) {
+            if (nTrs[i].value == "on" || nTrs[i].value == ""){
+                continue;
+            }
+            ids += nTrs[i].value;
+            if (i < nTrs.length-1){
+                ids += ",";
+            }
+        }
+        confrim("确定删除数据？","del", {id:ids},function (data) {
+            if (data.status == 0){
+                window.location.href="/corporation/list?promot="+promot.success;
+            }else {
+                DuzUtils.notifyError(data.msg);
+            }
+        })
+    }
+
+    $(function () {
+        $("#orderNum").attr("width", "50px");
+        $("#checkboxtitle").attr("width", "50px");
+        $("#operation").attr("width", "150px");
+    })
+</script>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    $(function () {
+        if (promot.success == [[${promot}]]){
+            DuzUtils.notifySuccess("操作成功");
+        }
+    })
+    /*]]>*/
+</script>
+</html>

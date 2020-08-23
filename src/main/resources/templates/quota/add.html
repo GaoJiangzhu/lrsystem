@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<!--suppress ALL-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link href="../new/assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../new/css/style.css"/>
+    <link rel="stylesheet" href="../new/assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../new/assets/css/font-awesome.min.css"/>
+    <link href="../new/Widget/icheck/icheck.css" rel="stylesheet" type="text/css"/>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../new/assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../new/assets/css/ace-ie.min.css"/>
+    <![endif]-->
+    <script src="../new/js/jquery-1.9.1.min.js"></script>
+    <script src="../new/assets/js/bootstrap.min.js"></script>
+    <script src="../new/assets/layer/layer.js" type="text/javascript"></script>
+    <script src="../new/assets/laydate/laydate.js" type="text/javascript"></script>
+    <script src="../business/common.js"></script>
+    <script type="text/javascript" src="../business/base.js"></script>
+    <script src="../ace/components/jquery-validation/dist/jquery.validate.js"></script>
+    <title>添加产品分类</title>
+</head>
+<body>
+<div class="type_style">
+    <div class="type_title">参数信息维护</div>
+    <div class="type_content">
+        <div class="Operate_btn">
+            <a href="javascript:void(0)" class="btn  btn-warning" onclick="edit()"><i
+                    class="icon-edit align-top bigger-125"></i>编辑</a>
+            <a href="javascript:void(0)" class="btn  btn-success"><i class="icon-ok align-top bigger-125"></i>禁用</a>
+            <a href="javascript:void(0)" class="btn  btn-danger" onclick="del()"><i
+                    class="icon-trash   align-top bigger-125"></i>删除</a>
+        </div>
+        <form id="form-user-add">
+            <input type="hidden" id="pId" name="pId" th:value="${id}"/>
+            <input type="hidden" id="id" name="id"/>
+            <input type="hidden" id="realid" name="realid" th:value="${id}"/>
+            <input type="hidden" id="isParent" name="isParent" th:value="${isParent}"/>
+            <div class="Operate_cont clearfix">
+                <label class="form-label"><span class="red">*</span>名称：</label>
+                <div class="formControls ">
+                    <input type="text" class="input-text" value="" id="name" disabled readonly
+                           name="name">
+                </div>
+            </div>
+            <div class="Operate_cont clearfix">
+                <label class="form-label"><span class="red">*</span>编码：</label>
+                <div class="formControls ">
+                    <input type="text" class="input-text" value="" id="code"
+                           name="code">
+                </div>
+            </div>
+
+            <div class="Operate_cont clearfix">
+                <label class="form-label">分值：</label>
+                <div class="formControls ">
+                    <input type="number" class="input-text" value="" id="score"
+                           name="score">
+                </div>
+            </div>
+            <div class="Operate_cont clearfix">
+                <label class="form-label">权重：</label>
+                <div class="formControls ">
+                    <input type="number" class="input-text" value="" id="weight"
+                           name="weight"/>
+                </div>
+            </div>
+        </form>
+            <div class="">
+                <div class="" style=" text-align:center">
+                    <input class="btn btn-primary radius" onclick="submit()" value="提交">
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="../new/assets/layer/layer.js"></script>
+<script type="text/javascript" src="../new/js/H-ui.js"></script>
+<script type="text/javascript" src="../new/js/H-ui.admin.js"></script>
+<script type="text/javascript">
+    function edit() {
+        var id = $("#pId").val();
+        if (id == "") {
+            DuzUtils.notifyWarning("请选择一个节点");
+            return;
+        }
+        $.ajax({
+            url: "edit",
+            type: "get",
+            datatype: "json",
+            data: {id: id},
+            success: function (data) {
+                console.log(data);
+                if (data.status == 0) {
+                    var data = data.aaData;
+                    $("#name").val(data.name);
+                    $("#code").val(data.code);
+                    $("#weight").val(data.weight);
+                    $("#score").val(data.score);
+                    $("#id").val(data.id);
+                    $("#pId").val("");
+                } else {
+                    DuzUtils.notifyError(data.msg);
+                }
+            },
+            error: function (data) {
+            }
+        })
+    }
+
+    function del() {
+        if ($("#pId").val() == "1") {
+            DuzUtils.notifyWarning("根节点不能删除");
+            return;
+        }
+        if ($("#pId") == "") {
+            DuzUtils.notifyWarning("请选择一个节点");
+            return;
+        }
+        var id = $("#realid").val();
+        confrim( "确认删除?", "del", {id: id}, function (data) {
+            if (data.status == 0) {
+                window.parent.location.href = "/quota/list?promot=" + promot.success;
+            } else {
+                DuzUtils.notifyError(data.msg);
+            }
+        }, function (data) {
+        })
+    }
+
+    function submit() {
+        if (!$("#form-user-add").valid()) {
+            return false;
+        }
+        var data = {
+            id: $("#id").val(),
+            pId: $("#pId").val(),
+            name: $("#name").val(),
+            code: $("#code").val(),
+            weight: $("#weight").val(),
+            score: $("#score").val()
+        }
+        $.ajax({
+            url: "save",
+            type: "get",
+            datatype: "json",
+            data: data,
+            success: function (data) {
+                console.log(data);
+                if (data.status == 0) {
+                    window.parent.location.href = "/quota/list?promot=" + promot.success;
+                } else if (data.status == 1) {
+                    DuzUtils.notifyError(data.msg);
+                } else {
+                    DuzUtils.notifyWarning(data.msg);
+                }
+            },
+            error: function (data) {
+            }
+        })
+    }
+
+    $(function () {
+        jQuery.validator.addMethod("numbervalid", function (value, element) {
+            return this.optional(element) || /([1-9]?\d|100)$/.test(value);
+        }, "<span style='color:red;'> &nbsp;填写0-100数字</span>");
+
+        $('#form-user-add').validate({
+            focusInvalid: false,
+            rules: {
+                name: {
+                    required: true
+                },
+                code: {
+                    required: true
+                },
+                score: {
+                    numbervalid:true
+                },
+                weight: {
+                    numbervalid:true
+                }
+            },
+            messages: {
+                name: {
+                    required: "<span style='color:red;'> &nbsp;必填项</span>"
+                },
+                code: {
+                    required: "<span style='color:red;'> &nbsp;必填项</span>"
+                },
+                score: {
+
+                },
+                weight: {
+
+                }
+            },
+
+            errorPlacement: function (error, element) {
+                if (element.is('input[type=checkbox]') || element.is('input[type=radio]')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else if (element.is('.select2')) {
+                    error.insertAfter(element.siblings('[class*="select2-container"]:eq(0)'));
+                }
+                else if (element.is('.chosen-select')) {
+                    error.insertAfter(element.siblings('[class*="chosen-container"]:eq(0)'));
+                }
+                else error.insertAfter(element);
+            },
+
+            submitHandler: function (form) {
+
+            },
+            invalidHandler: function (form) {
+            }
+        });
+    });
+</script>
+</body>
+</html>

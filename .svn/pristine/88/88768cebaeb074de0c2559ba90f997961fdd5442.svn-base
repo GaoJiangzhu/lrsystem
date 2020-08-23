@@ -1,0 +1,1931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="8b1ed6f6-36d7-4f7e-8ebc-daf8820758f6" name="Default" comment="日志管理修改">
+      <change afterPath="$PROJECT_DIR$/lrsystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/lrsystem$LrsBackApplication.ic" NAME="LrsBackApplication Coverage Results" MODIFIED="1535616187988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cn.nstl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/lrsystem$All_in_lrsystem.ic" NAME="All in lrsystem Coverage Results" MODIFIED="1531277811459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="autoscrollToSource" value="true" />
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="lrsystem" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DataMaintainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/controller/DataMaintainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="56" column="35" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="35" />
+              <folding>
+                <element signature="e#3956#3957#0" expanded="true" />
+                <element signature="e#4033#4034#0" expanded="true" />
+                <element signature="e#4172#4173#0" expanded="true" />
+                <element signature="e#4249#4250#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updResView.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dataMaintain/updResView.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="information.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dataMaintain/information.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6225" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="secondTrial.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/resourceRecommend/secondTrial.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="242" column="9" lean-forward="true" selection-start-line="242" selection-start-column="9" selection-end-line="242" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatamMaintainServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/service/impl/DatamMaintainServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
+              <folding>
+                <element signature="method#subscribeList#0;class#DatamMaintainServiceImpl#0" />
+                <element signature="method#updateOrderInfo#0;class#DatamMaintainServiceImpl#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SysDataMaintainDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/dao/SysDataMaintainDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="472">
+              <caret line="74" column="15" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SysResUpdRecord.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/entity/SysResUpdRecord.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
+              <folding>
+                <element signature="e#287#288#0" expanded="true" />
+                <element signature="e#314#315#0" expanded="true" />
+                <element signature="e#354#355#0" expanded="true" />
+                <element signature="e#386#387#0" expanded="true" />
+                <element signature="e#430#431#0" expanded="true" />
+                <element signature="e#464#465#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#564#565#0" expanded="true" />
+                <element signature="e#601#602#0" expanded="true" />
+                <element signature="e#634#635#0" expanded="true" />
+                <element signature="e#686#687#0" expanded="true" />
+                <element signature="e#730#731#0" expanded="true" />
+                <element signature="e#765#766#0" expanded="true" />
+                <element signature="e#796#797#0" expanded="true" />
+                <element signature="e#844#845#0" expanded="true" />
+                <element signature="e#884#885#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updResource.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dataMaintain/updResource.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="183" column="18" lean-forward="true" selection-start-line="177" selection-start-column="12" selection-end-line="183" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/dao/impl/BaseDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updResReview.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dataMaintain/updResReview.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="152" column="4" lean-forward="true" selection-start-line="152" selection-start-column="4" selection-end-line="152" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>echoSelect2</find>
+      <find>pubStatus</find>
+      <find>updRe</find>
+      <find>select</find>
+      <find>multiple=&quot;&quot;</find>
+      <find>国别</find>
+      <find>res.la</find>
+      <find>role</find>
+      <find>language</find>
+      <find>getOrderAudit</find>
+      <find>t_resource_log</find>
+      <find>SysResourcelog</find>
+      <find>JointIn</find>
+      <find>trial_opinion</find>
+      <find>\t</find>
+      <find>getResourceArrival</find>
+      <find>updRes</find>
+      <find>series_number</find>
+      <find>eries_number</find>
+      <find>assignAgree</find>
+      <find>add_administrator_style</find>
+      <find>updSql.get(&quot;sql&quot;).toString()</find>
+      <find>refuseReview</find>
+      <find>data.carrierList`</find>
+      <find>beforeValue</find>
+      <find>创刊</find>
+      <find>文献类型</find>
+      <find>setCarrier</find>
+      <find>出版模式</find>
+      <find>herf</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&lt;td&gt;期刊&lt;/td&gt;</replace>
+      <replace>无备注</replace>
+      <replace>1000</replace>
+      <replace>上一年度支付·涨幅</replace>
+      <replace>期刊</replace>
+      <replace>订购单位</replace>
+      <replace>?</replace>
+      <replace>被引频次</replace>
+      <replace>&lt;a href=&quot;#&quot; onclick=&quot;openInfor()&quot;&gt;Palaeontology&lt;/a&gt;</replace>
+      <replace>Pissn</replace>
+      <replace>&lt;span id=&quot;author&quot;&gt;&lt;/span&gt;</replace>
+      <replace>res</replace>
+      <replace />
+      <replace>sys_time</replace>
+      <replace>distribution_status</replace>
+      <replace>t_resource_log</replace>
+      <replace>t_resource_info</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\Workspace\ideawork\lrsystem\src\main\resources\templates\fundManage</dir>
+      <dir>D:\Workspace\ideawork\lrsystem</dir>
+    </dirStrings>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/cn/nstl/controller/StatisticalController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/templates/selection/auditAssignment.html" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/entity/Subscriber.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/datamaintain/subscriberInfo.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/statistical/subscriberInfo.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/common/SearchConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/statistical/subscriber.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/controller/OrderManagementController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/controller/FundManageController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/datamaintain/resourcesMainTain.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/dao/impl/SysResourceRecommendDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/datamaintain/maintain.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/service/StatisticalService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/dao/StatisticalDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/dao/impl/StatisticalDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/user/list.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/dataMaintain/information.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/service/impl/StatisticalServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/statistical/annualStatistics.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index/home.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/resourceRecommend/add.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/service/impl/ParamServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/resourceRecommend/singleAdd.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/controller/SelectionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/dao/SelectionDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/controller/StatisticalController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/entity/SysOrder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/dao/SysOrderDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/service/impl/OrderManagermentImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/dao/impl/SysOrderDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/selection/recommended.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/dao/impl/SelectionDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/service/impl/SelectionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/repository/SysResourceInfoRecordRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/repository/SysResourceInfoRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/dataMaintain/updResource.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/entity/SysResourceInfoRecord.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/common/SysDefine.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/entity/SysResourceInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/selection/auditAssignment.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/dataMaintain/updResReview.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/service/DataMaintainService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/dao/SysDataMaintainDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/dao/impl/SysDataMaintainDaoImol.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/dao/impl/BaseDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/service/impl/DatamMaintainServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/entity/SysResUpdRecord.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/nstl/controller/DataMaintainController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/dataMaintain/updResView.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="lrsystem" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="lrsystem" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="435" />
+    <option name="y" value="110" />
+    <option name="width" value="1346" />
+    <option name="height" value="726" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lrsystem" type="cbb8eebc:String" user="lrsystem" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lrsystem" type="cbb8eebc:String" user="lrsystem" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lrsystem" type="cbb8eebc:String" user="lrsystem" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lrsystem" type="cbb8eebc:String" user="lrsystem" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="resources" type="cbb8eebc:String" user="resources" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lrsystem" type="cbb8eebc:String" user="lrsystem" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="resources" type="cbb8eebc:String" user="resources" />
+              <item name="templates" type="cbb8eebc:String" user="templates" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="lrsystem" type="cbb8eebc:String" user="lrsystem" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="main" type="cbb8eebc:String" user="main" />
+              <item name="resources" type="cbb8eebc:String" user="resources" />
+              <item name="templates" type="cbb8eebc:String" user="templates" />
+              <item name="statistical" type="cbb8eebc:String" user="statistical" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="lrsystem" type="58d84e3e:PackageViewProjectNode" />
+              <item name="lrsystem" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="lrsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lrsystem" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/java/cn/nstl/dao/SysDataMaintainDao.java&#10;SysResourceLog&#9;PSI&#9;JAVA://cn.nstl.repository.SysResourceLogoRepository&#10;resourceRecommend/add&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/templates/resourceRecommend/add.html&#10;js/index.js&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/static/js/index.js&#10;PropertyReferenceException&#9;PSI&#9;JAVA://org.springframework.data.mapping.PropertyReferenceException&#10;SysResourceLogo&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/java/cn/nstl/entity/SysResourceLogo.java&#10;SysOrder&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/java/cn/nstl/entity/SysOrder.java&#10;ajax&#9;null&#9;null&#10;information&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/templates/resourceRecommend/information.html&#10;resourcesMaintain&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/templates/datamaintain/resourcesMainTain.html&#10;orderInfo&#9;null&#9;null&#10;resourceRecommend&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/java/cn/nstl/controller/ResourceRecommendController.java&#10;secondTrial&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/templates/resourceRecommend/secondTrial.html&#10;fragments/newjs&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/templates/fragments/newjs.html&#10;orderManagement&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/static/business/orderManagement&#10;orderList&#9;PSI&#9;JAVA://cn.nstl.controller.OrderManagementController#orderList&#10;Amounts&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/templates/new/Amounts.html&#10;business/statistical/arrival.js&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/static/business/statistical/arrival.js&#10;SysUserDao&#9;PSI&#9;JAVA://cn.nstl.dao.SysUserDao&#10;business/user/user.js&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/static/business/user/user.js&#10;user/user.js&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/static/business/user/user.js&#10;css/ui.css&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/static/css/ui.css&#10;/css/skin_/table.css&#9;FILE&#9;file://D:/Workspace/ideawork/lrsystem/src/main/resources/static/css/skin_/table.css" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../distribution_drp" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cn.nstl.entity" />
+      <recent name="cn.nstl.dao" />
+      <recent name="cn.nstl.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Workspace\ideawork\lrsystem\src\main\resources\templates\dataMaintain" />
+      <recent name="D:\Workspace\ideawork\lrsystem\src\main\resources\templates\datamaintain" />
+      <recent name="D:\Workspace\ideawork\lrsystem\src\main\resources" />
+      <recent name="D:\Workspace\ideawork\lrsystem\src\main\resources\templates\selection" />
+      <recent name="D:\Workspace\ideawork\lrsystem\src\main\resources\templates\fundManage" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.nstl.repository" />
+      <recent name="cn.nstl.entity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workspace\ideawork\lrsystem\src\main\resources\templates\statistical" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="svn" revision="416">D:\Workspace\ideawork\lrsystem\src\main\java\cn\nstl\service\impl\ResourceRecommendImpl.java</PATH>
+          <PATH vcs="svn" revision="416">D:\Workspace\ideawork\lrsystem\src\main\java\cn\nstl\service\ResourceRecommendService.java</PATH>
+          <PATH vcs="svn" revision="416">D:\Workspace\ideawork\lrsystem\src\main\java\cn\nstl\controller\ResourceRecommendController.java</PATH>
+          <PATH vcs="svn" revision="416">D:\Workspace\ideawork\lrsystem\src\main\java\cn\nstl\dao\impl\SysParamDaoImpl.java</PATH>
+          <PATH vcs="svn" revision="416">D:\Workspace\ideawork\lrsystem\src\main\resources\templates\resourceRecommend\singleAdd.html</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.LrsBackApplication">
+    <configuration name="LrsBackApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.nstl.LrsBackApplication" />
+      <module name="lrsystem" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.nstl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="All in lrsystem (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lrsystem" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="All in lrsystem (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lrsystem" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="All in lrsystem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lrsystem" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="LrsBackApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="lrsystem" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.nstl.LrsBackApplication" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.LrsBackApplication" />
+      <item itemvalue="Application.LrsBackApplication" />
+      <item itemvalue="JUnit.All in lrsystem" />
+      <item itemvalue="JUnit.All in lrsystem (1)" />
+      <item itemvalue="JUnit.All in lrsystem (2)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in lrsystem (2)" />
+        <item itemvalue="JUnit.All in lrsystem (1)" />
+        <item itemvalue="JUnit.All in lrsystem" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\Workspace\ideawork\lrsystem" />
+          <option name="myCopyRoot" value="D:\Workspace\ideawork\lrsystem" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\Workspace\ideawork\lrsystem" />
+          <option name="myCopyRoot" value="D:\Workspace\ideawork\lrsystem" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8b1ed6f6-36d7-4f7e-8ebc-daf8820758f6" name="Default" comment="" />
+      <created>1530584123429</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1530584123429</updated>
+      <workItem from="1530584128631" duration="855000" />
+      <workItem from="1530585021699" duration="34780000" />
+      <workItem from="1530754415631" duration="28835000" />
+      <workItem from="1531098185831" duration="2013000" />
+      <workItem from="1531100545080" duration="5352000" />
+      <workItem from="1531115291863" duration="21563000" />
+      <workItem from="1531210720016" duration="11362000" />
+      <workItem from="1531291059318" duration="10086000" />
+      <workItem from="1531356894675" duration="10615000" />
+      <workItem from="1531372243963" duration="5312000" />
+      <workItem from="1531443754242" duration="26691000" />
+      <workItem from="1531788939508" duration="9425000" />
+      <workItem from="1531875364482" duration="11666000" />
+      <workItem from="1532048331939" duration="42837000" />
+      <workItem from="1532913338478" duration="46559000" />
+      <workItem from="1533257865327" duration="5030000" />
+      <workItem from="1533287430436" duration="8139000" />
+      <workItem from="1533604478377" duration="20595000" />
+      <workItem from="1533691046243" duration="9993000" />
+      <workItem from="1533866323657" duration="1902000" />
+      <workItem from="1533868425828" duration="60001000" />
+      <workItem from="1534735125769" duration="14333000" />
+      <workItem from="1534835852076" duration="37247000" />
+      <workItem from="1535331909873" duration="1417000" />
+      <workItem from="1535338065879" duration="18039000" />
+      <workItem from="1535615611422" duration="30481000" />
+      <workItem from="1535935457843" duration="89143000" />
+    </task>
+    <task id="LOCAL-00001" summary="数据维护，统计分析，基础模块">
+      <created>1530688072564</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1530688072564</updated>
+    </task>
+    <task id="LOCAL-00002" summary="初始化经费管理">
+      <created>1530771555018</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1530771555018</updated>
+    </task>
+    <task id="LOCAL-00003" summary="荐购遴选初始化，数据维护修改">
+      <created>1530856868770</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1530856868770</updated>
+    </task>
+    <task id="LOCAL-00004" summary="荐购遴选 修改状态">
+      <created>1530861920310</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1530861920310</updated>
+    </task>
+    <task id="LOCAL-00005" summary="页面微调">
+      <created>1530865252627</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1530865252627</updated>
+    </task>
+    <task id="LOCAL-00006" summary="统计页面更改列表，经费管理页面补齐 《年度经费支出表管理》 页面">
+      <created>1531103229374</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1531103229374</updated>
+    </task>
+    <task id="LOCAL-00007" summary="日志管理初始化">
+      <created>1531301212194</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1531301212195</updated>
+    </task>
+    <task id="LOCAL-00008" summary="日志管理修改">
+      <created>1531450274144</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1531450274144</updated>
+    </task>
+    <task id="LOCAL-00009" summary="日志管理修改">
+      <created>1531452946802</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1531452946802</updated>
+    </task>
+    <task id="LOCAL-00010" summary="遴选">
+      <created>1531789940848</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1531789940848</updated>
+    </task>
+    <task id="LOCAL-00011" summary="维护">
+      <created>1531791801994</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1531791801994</updated>
+    </task>
+    <task id="LOCAL-00012" summary="修改页面">
+      <created>1531806716034</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1531806716034</updated>
+    </task>
+    <task id="LOCAL-00013" summary="增添详情页面">
+      <created>1531905598162</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1531905598162</updated>
+    </task>
+    <task id="LOCAL-00014" summary="交互查询">
+      <created>1532669779686</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1532669779686</updated>
+    </task>
+    <task id="LOCAL-00015" summary="资源记录订单">
+      <created>1533088084500</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1533088084500</updated>
+    </task>
+    <task id="LOCAL-00016" summary="资源实体">
+      <created>1533106041513</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1533106041513</updated>
+    </task>
+    <task id="LOCAL-00017" summary="资源遴选">
+      <created>1533112025716</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1533112025716</updated>
+    </task>
+    <task id="LOCAL-00018" summary="荐购查询组件">
+      <created>1533173471804</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1533173471804</updated>
+    </task>
+    <task id="LOCAL-00019" summary="荐购查询">
+      <created>1533175653729</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1533175653729</updated>
+    </task>
+    <task id="LOCAL-00020" summary="荐购详情展示">
+      <created>1533192697583</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1533192697583</updated>
+    </task>
+    <task id="LOCAL-00021" summary="遴选详情路径">
+      <created>1533192817583</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1533192817583</updated>
+    </task>
+    <task id="LOCAL-00022" summary="遴选微调">
+      <created>1533289883712</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1533289883712</updated>
+    </task>
+    <task id="LOCAL-00023" summary="订单处理初始化">
+      <created>1533691901479</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1533691901479</updated>
+    </task>
+    <task id="LOCAL-00024" summary="弹框信息修改">
+      <created>1533875352169</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1533875352169</updated>
+    </task>
+    <task id="LOCAL-00025" summary="荐购分配资源状态修改">
+      <created>1533886634089</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1533886634089</updated>
+    </task>
+    <task id="LOCAL-00026" summary="订单页面显示">
+      <created>1533887610518</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1533887610518</updated>
+    </task>
+    <task id="LOCAL-00027" summary="bug修改">
+      <created>1534240061789</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1534240061789</updated>
+    </task>
+    <task id="LOCAL-00028" summary="资源管理修改，订单生成默认值增加">
+      <created>1534487061393</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1534487061393</updated>
+    </task>
+    <task id="LOCAL-00029" summary="实体修改封装">
+      <created>1534733220083</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1534733220083</updated>
+    </task>
+    <task id="LOCAL-00030" summary="修改-&gt;注解获取表名">
+      <created>1534736014964</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1534736014964</updated>
+    </task>
+    <task id="LOCAL-00031" summary="字段调整">
+      <created>1534840044847</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1534840044847</updated>
+    </task>
+    <task id="LOCAL-00032" summary="标识调整">
+      <created>1534842348270</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1534842348270</updated>
+    </task>
+    <task id="LOCAL-00033" summary="单位订购信息统计详情">
+      <created>1535017712071</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1535017712071</updated>
+    </task>
+    <task id="LOCAL-00034" summary="删除多余代码">
+      <created>1535426595274</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1535426595274</updated>
+    </task>
+    <task id="LOCAL-00035">
+      <created>1535524810655</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1535524810655</updated>
+    </task>
+    <task id="LOCAL-00036">
+      <created>1535608713987</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1535608713987</updated>
+    </task>
+    <task id="LOCAL-00037">
+      <created>1535608885726</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1535608885726</updated>
+    </task>
+    <task id="LOCAL-00038">
+      <created>1535609131678</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1535609131678</updated>
+    </task>
+    <task id="LOCAL-00039">
+      <created>1535610520956</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1535610520956</updated>
+    </task>
+    <task id="LOCAL-00040">
+      <created>1535613697011</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1535613697011</updated>
+    </task>
+    <task id="LOCAL-00041">
+      <created>1535705969688</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1535705969688</updated>
+    </task>
+    <task id="LOCAL-00042" summary="新荐购分配">
+      <created>1536138863380</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1536138863380</updated>
+    </task>
+    <task id="LOCAL-00043" summary="新订单处理">
+      <created>1536284457987</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1536284457987</updated>
+    </task>
+    <task id="LOCAL-00044" summary="资源信息修改评审">
+      <created>1536312951591</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1536312951591</updated>
+    </task>
+    <task id="LOCAL-00045" summary="资源修改审批">
+      <created>1536553897356</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1536553897356</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="All_in_lrsystem - 2018.07.11 at 10h 57m 16s.xml">
+      <configuration name="All in lrsystem" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_lrsystem_(1) - 2018.07.12 at 10h 00m 06s.xml">
+      <configuration name="All in lrsystem (1)" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="564271000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="SVN Repositories" weight="0.32980132" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50385606" side_tool="true" weight="0.21324503" />
+      <window_info anchor="right" id="Maven Projects" order="0" weight="0.32969153" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32969153" />
+      <window_info id="Structure" order="1" sideWeight="0.50198674" side_tool="true" weight="0.21336761" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.49614397" visible="true" weight="0.11258278" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32980132" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49678662" weight="0.3245033" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32980132" />
+      <window_info anchor="right" id="Capture Analysis" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49871466" weight="0.7602649" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.30331126" />
+      <window_info anchor="bottom" id="Spring" order="12" weight="0.32980132" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4974093" visible="true" weight="0.20244215" />
+      <window_info anchor="right" id="Bean Validation" order="1" weight="0.5234694" />
+      <window_info id="Web" order="6" sideWeight="0.50259066" side_tool="true" weight="0.17994858" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32980132" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info id="Favorites" order="5" sideWeight="0.5019763" side_tool="true" weight="0.17673522" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="SVN Properties" order="13" weight="0.32980132" />
+      <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.17159383" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="交互查询" />
+    <MESSAGE value="资源记录订单" />
+    <MESSAGE value="资源实体" />
+    <MESSAGE value="资源遴选" />
+    <MESSAGE value="荐购查询组件" />
+    <MESSAGE value="荐购查询" />
+    <MESSAGE value="荐购详情展示" />
+    <MESSAGE value="遴选详情路径" />
+    <MESSAGE value="遴选微调" />
+    <MESSAGE value="订单处理初始化" />
+    <MESSAGE value="弹框信息修改" />
+    <MESSAGE value="荐购分配资源状态修改" />
+    <MESSAGE value="订单页面显示" />
+    <MESSAGE value="bug修改" />
+    <MESSAGE value="资源管理修改，订单生成默认值增加" />
+    <MESSAGE value="实体修改封装" />
+    <MESSAGE value="修改-&gt;注解获取表名" />
+    <MESSAGE value="字段调整" />
+    <MESSAGE value="标识调整" />
+    <MESSAGE value="单位订购信息统计详情" />
+    <MESSAGE value="删除多余代码" />
+    <MESSAGE value="新荐购分配" />
+    <MESSAGE value="新订单处理" />
+    <MESSAGE value="资源信息修改评审" />
+    <MESSAGE value="资源修改审批" />
+    <option name="LAST_COMMIT_MESSAGE" value="资源修改审批" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="332" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/statistical/annualStatistics.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-529">
+          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="111" column="13" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/controller/ResourceRecommendController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="212" column="47" selection-start-line="212" selection-start-column="33" selection-end-line="212" selection-end-column="47" />
+          <folding>
+            <element signature="e#3344#3345#0" expanded="true" />
+            <element signature="e#3390#3391#0" expanded="true" />
+            <element signature="e#6195#6196#0" expanded="true" />
+            <element signature="e#6252#6253#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/service/impl/ParamServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="326" column="19" lean-forward="true" selection-start-line="326" selection-start-column="19" selection-end-line="326" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/resourceRecommend/singleAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-195">
+          <caret line="631" column="18" selection-start-line="631" selection-start-column="18" selection-end-line="631" selection-end-column="18" />
+          <folding>
+            <element signature="e#22218#23590#0" />
+            <element signature="e#23626#23740#0" />
+            <element signature="e#23774#23888#0" />
+            <element signature="e#23922#24036#0" />
+            <element signature="e#24070#24184#0" />
+            <element signature="e#24218#24332#0" />
+            <element signature="e#24371#26156#0" />
+            <element signature="e#26191#29117#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="21" column="137" selection-start-line="21" selection-start-column="137" selection-end-line="21" selection-end-column="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/repository/SysOrderRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="77" lean-forward="true" selection-start-line="5" selection-start-column="77" selection-end-line="5" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/business/statistical/arrival.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/entity/SysResourceLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/controller/StatisticalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1201">
+          <caret line="83" column="17" lean-forward="true" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/entity/SysOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="318" column="24" selection-start-line="318" selection-start-column="24" selection-end-line="318" selection-end-column="24" />
+          <folding>
+            <element signature="e#6432#6433#0" expanded="true" />
+            <element signature="e#6455#6456#0" expanded="true" />
+            <element signature="e#6484#6485#0" expanded="true" />
+            <element signature="e#6509#6510#0" expanded="true" />
+            <element signature="e#6545#6546#0" expanded="true" />
+            <element signature="e#6573#6574#0" expanded="true" />
+            <element signature="e#6612#6613#0" expanded="true" />
+            <element signature="e#6647#6648#0" expanded="true" />
+            <element signature="e#6703#6704#0" expanded="true" />
+            <element signature="e#6751#6752#0" expanded="true" />
+            <element signature="e#6789#6790#0" expanded="true" />
+            <element signature="e#6823#6824#0" expanded="true" />
+            <element signature="e#6877#6878#0" expanded="true" />
+            <element signature="e#6923#6924#0" expanded="true" />
+            <element signature="e#6957#6958#0" expanded="true" />
+            <element signature="e#6987#6988#0" expanded="true" />
+            <element signature="e#7033#7034#0" expanded="true" />
+            <element signature="e#7071#7072#0" expanded="true" />
+            <element signature="e#7112#7113#0" expanded="true" />
+            <element signature="e#7149#7150#0" expanded="true" />
+            <element signature="e#7209#7210#0" expanded="true" />
+            <element signature="e#7261#7262#0" expanded="true" />
+            <element signature="e#7297#7298#0" expanded="true" />
+            <element signature="e#7329#7330#0" expanded="true" />
+            <element signature="e#7379#7380#0" expanded="true" />
+            <element signature="e#7421#7422#0" expanded="true" />
+            <element signature="e#7458#7459#0" expanded="true" />
+            <element signature="e#7491#7492#0" expanded="true" />
+            <element signature="e#7543#7544#0" expanded="true" />
+            <element signature="e#7587#7588#0" expanded="true" />
+            <element signature="e#7622#7623#0" expanded="true" />
+            <element signature="e#7653#7654#0" expanded="true" />
+            <element signature="e#7701#7702#0" expanded="true" />
+            <element signature="e#7741#7742#0" expanded="true" />
+            <element signature="e#7776#7777#0" expanded="true" />
+            <element signature="e#7807#7808#0" expanded="true" />
+            <element signature="e#7855#7856#0" expanded="true" />
+            <element signature="e#7895#7896#0" expanded="true" />
+            <element signature="e#7932#7933#0" expanded="true" />
+            <element signature="e#7965#7966#0" expanded="true" />
+            <element signature="e#8017#8018#0" expanded="true" />
+            <element signature="e#8061#8062#0" expanded="true" />
+            <element signature="e#8099#8100#0" expanded="true" />
+            <element signature="e#8133#8134#0" expanded="true" />
+            <element signature="e#8187#8188#0" expanded="true" />
+            <element signature="e#8233#8234#0" expanded="true" />
+            <element signature="e#8269#8270#0" expanded="true" />
+            <element signature="e#8301#8302#0" expanded="true" />
+            <element signature="e#8351#8352#0" expanded="true" />
+            <element signature="e#8393#8394#0" expanded="true" />
+            <element signature="e#8432#8433#0" expanded="true" />
+            <element signature="e#8467#8468#0" expanded="true" />
+            <element signature="e#8523#8524#0" expanded="true" />
+            <element signature="e#8571#8572#0" expanded="true" />
+            <element signature="e#8610#8611#0" expanded="true" />
+            <element signature="e#8645#8646#0" expanded="true" />
+            <element signature="e#8701#8702#0" expanded="true" />
+            <element signature="e#8749#8750#0" expanded="true" />
+            <element signature="e#8783#8784#0" expanded="true" />
+            <element signature="e#8812#8813#0" expanded="true" />
+            <element signature="e#8856#8857#0" expanded="true" />
+            <element signature="e#8892#8893#0" expanded="true" />
+            <element signature="e#8930#8931#0" expanded="true" />
+            <element signature="e#8964#8965#0" expanded="true" />
+            <element signature="e#9018#9019#0" expanded="true" />
+            <element signature="e#9064#9065#0" expanded="true" />
+            <element signature="e#9104#9105#0" expanded="true" />
+            <element signature="e#9140#9141#0" expanded="true" />
+            <element signature="e#9198#9199#0" expanded="true" />
+            <element signature="e#9248#9249#0" expanded="true" />
+            <element signature="e#9284#9285#0" expanded="true" />
+            <element signature="e#9316#9317#0" expanded="true" />
+            <element signature="e#9366#9367#0" expanded="true" />
+            <element signature="e#9408#9409#0" expanded="true" />
+            <element signature="e#9447#9448#0" expanded="true" />
+            <element signature="e#9482#9483#0" expanded="true" />
+            <element signature="e#9538#9539#0" expanded="true" />
+            <element signature="e#9586#9587#0" expanded="true" />
+            <element signature="e#9623#9624#0" expanded="true" />
+            <element signature="e#9656#9657#0" expanded="true" />
+            <element signature="e#9708#9709#0" expanded="true" />
+            <element signature="e#9752#9753#0" expanded="true" />
+            <element signature="e#9785#9786#0" expanded="true" />
+            <element signature="e#9814#9815#0" expanded="true" />
+            <element signature="e#9858#9859#0" expanded="true" />
+            <element signature="e#9894#9895#0" expanded="true" />
+            <element signature="e#9930#9931#0" expanded="true" />
+            <element signature="e#9962#9963#0" expanded="true" />
+            <element signature="e#10012#10013#0" expanded="true" />
+            <element signature="e#10054#10055#0" expanded="true" />
+            <element signature="e#10085#10086#0" expanded="true" />
+            <element signature="e#10112#10113#0" expanded="true" />
+            <element signature="e#10152#10153#0" expanded="true" />
+            <element signature="e#10184#10185#0" expanded="true" />
+            <element signature="e#10217#10218#0" expanded="true" />
+            <element signature="e#10246#10247#0" expanded="true" />
+            <element signature="e#10290#10291#0" expanded="true" />
+            <element signature="e#10326#10327#0" expanded="true" />
+            <element signature="e#10361#10362#0" expanded="true" />
+            <element signature="e#10392#10393#0" expanded="true" />
+            <element signature="e#10440#10441#0" expanded="true" />
+            <element signature="e#10480#10481#0" expanded="true" />
+            <element signature="e#10515#10516#0" expanded="true" />
+            <element signature="e#10546#10547#0" expanded="true" />
+            <element signature="e#10594#10595#0" expanded="true" />
+            <element signature="e#10634#10635#0" expanded="true" />
+            <element signature="e#10668#10669#0" expanded="true" />
+            <element signature="e#10698#10699#0" expanded="true" />
+            <element signature="e#10744#10745#0" expanded="true" />
+            <element signature="e#10782#10783#0" expanded="true" />
+            <element signature="e#10820#10821#0" expanded="true" />
+            <element signature="e#10854#10855#0" expanded="true" />
+            <element signature="e#10908#10909#0" expanded="true" />
+            <element signature="e#10954#10955#0" expanded="true" />
+            <element signature="e#10989#10990#0" expanded="true" />
+            <element signature="e#11020#11021#0" expanded="true" />
+            <element signature="e#11068#11069#0" expanded="true" />
+            <element signature="e#11108#11109#0" expanded="true" />
+            <element signature="e#11143#11144#0" expanded="true" />
+            <element signature="e#11174#11175#0" expanded="true" />
+            <element signature="e#11222#11223#0" expanded="true" />
+            <element signature="e#11262#11263#0" expanded="true" />
+            <element signature="e#11296#11297#0" expanded="true" />
+            <element signature="e#11326#11327#0" expanded="true" />
+            <element signature="e#11372#11373#0" expanded="true" />
+            <element signature="e#11410#11411#0" expanded="true" />
+            <element signature="e#11446#11447#0" expanded="true" />
+            <element signature="e#11478#11479#0" expanded="true" />
+            <element signature="e#11528#11529#0" expanded="true" />
+            <element signature="e#11570#11571#0" expanded="true" />
+            <element signature="e#11608#11609#0" expanded="true" />
+            <element signature="e#11642#11643#0" expanded="true" />
+            <element signature="e#11696#11697#0" expanded="true" />
+            <element signature="e#11742#11743#0" expanded="true" />
+            <element signature="e#11779#11780#0" expanded="true" />
+            <element signature="e#11812#11813#0" expanded="true" />
+            <element signature="e#11864#11865#0" expanded="true" />
+            <element signature="e#11908#11909#0" expanded="true" />
+            <element signature="e#11948#11949#0" expanded="true" />
+            <element signature="e#11984#11985#0" expanded="true" />
+            <element signature="e#12042#12043#0" expanded="true" />
+            <element signature="e#12092#12093#0" expanded="true" />
+            <element signature="e#12134#12135#0" expanded="true" />
+            <element signature="e#12172#12173#0" expanded="true" />
+            <element signature="e#12234#12235#0" expanded="true" />
+            <element signature="e#12288#12289#0" expanded="true" />
+            <element signature="e#12329#12330#0" expanded="true" />
+            <element signature="e#12366#12367#0" expanded="true" />
+            <element signature="e#12426#12427#0" expanded="true" />
+            <element signature="e#12478#12479#0" expanded="true" />
+            <element signature="e#12518#12519#0" expanded="true" />
+            <element signature="e#12554#12555#0" expanded="true" />
+            <element signature="e#12612#12613#0" expanded="true" />
+            <element signature="e#12662#12663#0" expanded="true" />
+            <element signature="e#12704#12705#0" expanded="true" />
+            <element signature="e#12742#12743#0" expanded="true" />
+            <element signature="e#12804#12805#0" expanded="true" />
+            <element signature="e#12858#12859#0" expanded="true" />
+            <element signature="e#12899#12900#0" expanded="true" />
+            <element signature="e#12936#12937#0" expanded="true" />
+            <element signature="e#12996#12997#0" expanded="true" />
+            <element signature="e#13048#13049#0" expanded="true" />
+            <element signature="e#13083#13084#0" expanded="true" />
+            <element signature="e#13114#13115#0" expanded="true" />
+            <element signature="e#13162#13163#0" expanded="true" />
+            <element signature="e#13202#13203#0" expanded="true" />
+            <element signature="e#13239#13240#0" expanded="true" />
+            <element signature="e#13272#13273#0" expanded="true" />
+            <element signature="e#13324#13325#0" expanded="true" />
+            <element signature="e#13368#13369#0" expanded="true" />
+            <element signature="e#13404#13405#0" expanded="true" />
+            <element signature="e#13436#13437#0" expanded="true" />
+            <element signature="e#13486#13487#0" expanded="true" />
+            <element signature="e#13528#13529#0" expanded="true" />
+            <element signature="e#13627#13628#0" expanded="true" />
+            <element signature="e#13659#13660#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/aop/LogAOP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2666">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/common/LogAOP1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2459">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/selection/recommended.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="347" column="127" selection-start-line="347" selection-start-column="127" selection-end-line="347" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/controller/SelectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+          <folding>
+            <element signature="e#2244#2245#0" expanded="true" />
+            <element signature="e#2307#2308#0" expanded="true" />
+            <element signature="e#2840#2841#0" expanded="true" />
+            <element signature="e#2902#2903#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/dao/SysOrderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/dao/impl/SysOrderDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="190" column="15" lean-forward="true" selection-start-line="190" selection-start-column="15" selection-end-line="190" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/service/impl/OrderManagermentImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/service/impl/SelectionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="93" column="36" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
+          <folding>
+            <element signature="e#3889#3890#0" expanded="true" />
+            <element signature="e#3949#3950#0" expanded="true" />
+            <element signature="e#4023#4024#0" expanded="true" />
+            <element signature="e#4081#4082#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/dao/SelectionDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/dao/impl/SelectionDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/controller/OrderManagementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="70" column="67" selection-start-line="70" selection-start-column="67" selection-end-line="70" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3081">
+          <caret line="349" column="42" selection-start-line="349" selection-start-column="42" selection-end-line="349" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/repository/SysLogRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/repository/SysResourceLogoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/repository/SysResourceInfoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="10" column="89" selection-start-line="10" selection-start-column="89" selection-end-line="10" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/service/impl/ResourceRecommendImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="158" column="55" lean-forward="true" selection-start-line="158" selection-start-column="55" selection-end-line="158" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/repository/SysResourceInfoRecordRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="10" column="92" selection-start-line="10" selection-start-column="92" selection-end-line="10" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.10.RELEASE/spring-core-4.3.10.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/entity/SysResourceInfoRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dataMaintain/resourcesMaintain.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/common/SysDefine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="210" column="25" selection-start-line="210" selection-start-column="25" selection-end-line="210" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/entity/EntityOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="62" column="45" lean-forward="true" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.0.5/mysql-connector-java-5.0.5.jar!/com/mysql/jdbc/SQLError.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="234" selection-start-line="234" selection-end-line="234" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/selection/auditAssignment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="113" column="23" lean-forward="true" selection-start-line="113" selection-start-column="23" selection-end-line="113" selection-end-column="23" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#10091#14711#0" />
+            <element signature="e#14748#15340#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/service/DataMaintainService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/dao/impl/SysDataMaintainDaoImol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="302" column="51" lean-forward="true" selection-start-line="302" selection-start-column="51" selection-end-line="302" selection-end-column="51" />
+          <folding>
+            <element signature="method#findSubscribeList#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#findSubscribeCount#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#findOrderInfo#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#findResourceInfo#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#getOrderInfo#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#getResourcesList#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#getResourcesCount#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#getResources#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#resProveExistence#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#resProverSave#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#getResToProve#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#getResReviewList#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#getResReviewCount#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="method#agreeReview#0;class#SysDataMaintainDaoImol#0" />
+            <element signature="e#15310#15311#0" expanded="true" />
+            <element signature="e#15374#15375#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/entity/SysResUpdRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
+          <folding>
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#765#766#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#884#885#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/dao/impl/SysParamDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="78" column="44" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/entity/SysResourceInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="121" column="19" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
+          <folding>
+            <element signature="e#3142#3143#0" expanded="true" />
+            <element signature="e#3170#3171#0" expanded="true" />
+            <element signature="e#5433#5434#0" expanded="true" />
+            <element signature="e#5463#5464#0" expanded="true" />
+            <element signature="e#5581#5582#0" expanded="true" />
+            <element signature="e#5611#5612#0" expanded="true" />
+            <element signature="e#5733#5734#0" expanded="true" />
+            <element signature="e#5767#5768#0" expanded="true" />
+            <element signature="e#6630#6631#0" expanded="true" />
+            <element signature="e#6660#6661#0" expanded="true" />
+            <element signature="e#6775#6776#0" expanded="true" />
+            <element signature="e#6802#6803#0" expanded="true" />
+            <element signature="e#6911#6912#0" expanded="true" />
+            <element signature="e#6944#6945#0" expanded="true" />
+            <element signature="e#6996#6997#0" expanded="true" />
+            <element signature="e#7040#7041#0" expanded="true" />
+            <element signature="e#8314#8315#0" expanded="true" />
+            <element signature="e#8349#8350#0" expanded="true" />
+            <element signature="e#8405#8406#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/dao/impl/BaseDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dataMaintain/updResReview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="152" column="4" lean-forward="true" selection-start-line="152" selection-start-column="4" selection-end-line="152" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/resourceRecommend/secondTrial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="242" column="9" lean-forward="true" selection-start-line="242" selection-start-column="9" selection-end-line="242" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dataMaintain/information.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6225" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/controller/DataMaintainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="56" column="35" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="35" />
+          <folding>
+            <element signature="e#3956#3957#0" expanded="true" />
+            <element signature="e#4033#4034#0" expanded="true" />
+            <element signature="e#4172#4173#0" expanded="true" />
+            <element signature="e#4249#4250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dataMaintain/updResource.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="183" column="18" lean-forward="true" selection-start-line="177" selection-start-column="12" selection-end-line="183" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/service/impl/DatamMaintainServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="method#subscribeList#0;class#DatamMaintainServiceImpl#0" />
+            <element signature="method#updateOrderInfo#0;class#DatamMaintainServiceImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/nstl/dao/SysDataMaintainDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="74" column="15" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dataMaintain/updResView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArquillianSettingsConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>lrsystem</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

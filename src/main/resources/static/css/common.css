@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  line-height: 1.5;
+  color: #212529;
+  font-size: 13px;
+}
+.material-icons {
+  vertical-align: middle;
+}
+.page-title {
+  font-size: 18px;
+  color: #999999;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.bg-fa {
+  background-color: #fafafa;
+}
+.navbar .form-inline + .form-inline {
+  margin-left: 50px;
+}
+.navbar .form-inline .opt-title {
+  margin-right: 15px;
+}
+.navbar .form-inline .form-check-inline + .form-check-inline {
+  margin-left: 25px;
+}
+.navbar .form-inline .form-check-inline input {
+  margin-right: 5px;
+}
+.c-menu-list,
+.c-menu-child {
+  padding-left: 0;
+  margin-top: 0;
+  list-style: none;
+}
+.c-menu-list {
+  background-color: #f7f7f7;
+}
+.c-menu-child {
+  overflow: hidden;
+}
+.c-menu-head,
+.c-menu-item {
+  padding: 6px 0 6px 20px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+.c-menu.c-menu-close .c-menu-head::before {
+  top: 12px;
+  transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+}
+.c-menu.c-menu-close .c-menu-item {
+  margin-top: -40px;
+}
+.c-menu-head {
+  background-color: #eeeeee;
+  position: relative;
+}
+.c-menu-head::before {
+  content: "";
+  display: block;
+  right: 20px;
+  top: 16px;
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  border: solid #565656;
+  border-width: 1px 1px 0 0;
+  transition: all .3s;
+}
+.c-menu-item {
+  padding-left: 40px;
+  transition: all .2s;
+}
+.c-menu-item.active,
+.c-menu-item:hover {
+  background-color: #D2E6F9;
+  color: #1879FF;
+}
+.list-panel-footer {
+  padding: 15px;
+  display: flex;
+  border-top: 1px solid #E8E8E8;
+}
+.list-panel-footer select {
+  width: auto;
+  display: inline-block;
+}
+.list-panel-head-title {
+  text-align: center;
+  flex: 1;
+  line-height: 30px;
+  border: 1px dashed #999999;
+  border-radius: 4px;
+}

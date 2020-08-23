@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--suppress ALL-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link href="../new/assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../new/css/style.css"/>
+    <link href="../new/assets/css/codemirror.css" rel="stylesheet">
+    <link rel="stylesheet" href="../new/assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../new/font/css/font-awesome.min.css"/>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../new/assets/css/ace-ie.min.css"/>
+    <![endif]-->
+    <script src="../new/js/jquery-1.9.1.min.js"></script>
+    <script src="../new/assets/js/bootstrap.min.js"></script>
+    <script src="../new/assets/js/typeahead-bs2.min.js"></script>
+    <script src="../new/assets/js/jquery.dataTables.min.js"></script>
+    <script src="../new/assets/js/jquery.dataTables.bootstrap.js"></script>
+    <script src="../new/assets/layer/layer.js" type="text/javascript"></script>
+    <script src="../new/assets/laydate/laydate.js" type="text/javascript"></script>
+    <script src="../new/js/dragDivResize.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../business/common.js"></script>
+    <title>添加权限</title>
+</head>
+
+<body>
+<div class="Competence_add_style clearfix">
+    <div class="left_Competence_add">
+        <div class="title_name">添加功能</div>
+        <div class="Competence_add">
+            <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="moduleName">
+                功能名称 </label>
+                <div class="col-sm-9"><input type="text" id="moduleName" placeholder="" name="moduleName"
+                                             class="col-xs-10 col-sm-5"></div>
+            </div>
+            <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="action"> URL </label>
+                <div class="col-sm-9"><input type="text" id="action" placeholder="" name="action"
+                                             class="col-xs-10 col-sm-5"></div>
+            </div>
+            <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="parentId"> 上级 </label>
+                <div class="col-sm-9">
+                    <select type="text" id="parentId" placeholder="" name="parentId" class="col-xs-10 col-sm-5" onchange="change(this)">
+                        <option value="">请选择</option>
+                        <option th:each="mode:${module}" th:value="${mode.id}" th:text="${mode.moduleName}"></option>
+                    </select>
+                    <select type="text" id="parentId1" placeholder="" name="parentId" class="col-xs-10 col-sm-5" style="margin-left: 20px">
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="icon"> 功能图标 </label>
+                <div class="col-sm-9"><input type="text" id="icon" placeholder="" name="icon"
+                                             class="col-xs-10 col-sm-5"></div>
+            </div>
+            <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="orderNum"> 排序 </label>
+                <div class="col-sm-9"><input type="text" id="orderNum" placeholder="" name="orderNum"
+                                             class="col-xs-10 col-sm-5"></div>
+            </div>
+            <!--按钮操作-->
+            <div class="Button_operation">
+                <button onclick="module_save_submit();" class="btn btn-primary radius" type="submit"><i
+                        class="fa fa-save "></i> 提交
+                </button>
+                <button onclick="article_save();" class="btn btn-secondary  btn-warning" type="button"><i
+                        class="fa fa-reply"></i> 返回列表
+                </button>
+                <button onclick="layer_close();" class="btn btn-default radius" type="button">
+                    &nbsp;&nbsp;刷新&nbsp;&nbsp;
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--权限分配-->
+    <div class="Assign_style">
+        <div class="title_name">权限分配</div>
+        <div class="Select_Competence">
+
+            <dl class="permission-list" th:each="mode:${module}">
+                <dt><label class="middle"><input name="user-Character-0" class="ace" type="checkbox"
+                                                 id="id-disable-check"><span class="lbl" th:text="${mode.moduleName}">产品管理</span></label>
+                </dt>
+                <dd th:if="${#lists.size(mode.children) gt 0}">
+                    <dl class="cl permission-list2" th:each="mode2:${mode.children}">
+                        <dt style="width:160px"><label class="middle">
+                            <input type="checkbox" value="" class="ace" name="user-Character-0-0" id="id-disable-check">
+                            <span class="lbl" th:text="${mode2.moduleName}">产品列表</span></label>
+                        </dt>
+                        <dd>
+                            <label class="middle" th:each="mode3,index:${mode2.children}">
+                                <input type="checkbox" value="" class="ace"  name="user-Character-0-0-0" id="user-Character-0-0-0">
+                                <span class="lbl" th:text="${mode3.moduleName}">添加</span>
+                            </label>
+                            <label class="middle" th:if="${#lists.size(mode2.children) eq 0}">
+                            </label>
+                        </dd>
+                    </dl>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    //初始化宽度、高度
+    $(".left_Competence_add,.Competence_add_style").height($(window).height()).val();
+    ;
+    $(".Assign_style").width($(window).width() - 500).height($(window).height()).val();
+    $(".Select_Competence").width($(window).width() - 500).height($(window).height() - 40).val();
+    //当文档窗口发生改变时 触发
+    $(window).resize(function () {
+
+        $(".Assign_style").width($(window).width() - 500).height($(window).height()).val();
+        $(".Select_Competence").width($(window).width() - 500).height($(window).height() - 40).val();
+        $(".left_Competence_add,.Competence_add_style").height($(window).height()).val();
+        ;
+    });
+
+    /**
+     * 下拉选联动
+     * */
+    function change(obj){
+        if ($("#parentId").val()!=""){
+            $.ajax({
+                url:"change",
+                type:"get",
+                datatype:"json",
+                data:{parentId:$("#parentId").val()},
+                success:function (data) {
+                    console.log(data);
+                    if (data.status == 0){
+                        var data = data.aaData;
+                        $("#parentId1").empty().append("<option value=''>请选择</option>")
+                        for (var i = 0; i < data.length; i++) {
+                            $("#parentId1").append("<option value='"+data[i].id+"'>"+data[i].moduleName+"</option>")
+                        }
+
+                    }else {
+                        notifyError(data.msg);
+                    }
+                },
+                error:function(data) {
+                    console.log(data)
+                }
+            })
+        }
+    }
+
+    function module_save_submit(){
+
+        if (isBlank($("#moduleName").val())){
+            notifyWarning("模块名称不能为空");
+            return;
+        }
+        if (isBlank($("#action").val())){
+            notifyWarning("URL不能为空");
+            return;
+        }
+        var data = {
+            moduleName:$("#moduleName").val(),
+            action:$("#action").val(),
+            icon:$("#icon").val(),
+            orderNum:$("#orderNum").val(),
+            parentId:isBlank($("#parentId1").val())?(isBlank($("#parentId").val())?"":$("#parentId").val()):$("#parentId1").val()
+        };
+        $.ajax({
+            url:"save",
+            type:"post",
+            datatype:"json",
+            data:data,
+            success:function (data) {
+                console.log(data);
+                if(data.status == 0){
+                    window.location.href="/auth/list";
+                }
+            },
+            error:function (data) {
+                console.log(data);
+            }
+        })
+
+    }
+
+    /*按钮选择*/
+    $(function () {
+        $(".permission-list dt input:checkbox").click(function () {
+            $(this).closest("dl").find("dd input:checkbox").prop("checked", $(this).prop("checked"));
+        });
+        $(".permission-list2 dd input:checkbox").click(function () {
+            var l = $(this).parent().parent().find("input:checked").length;
+            var l2 = $(this).parents(".permission-list").find(".permission-list2 dd").find("input:checked").length;
+            if ($(this).prop("checked")) {
+                $(this).closest("dl").find("dt input:checkbox").prop("checked", true);
+                $(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked", true);
+            }
+            else {
+                if (l == 0) {
+                    $(this).closest("dl").find("dt input:checkbox").prop("checked", false);
+                }
+                if (l2 == 0) {
+                    $(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked", false);
+                }
+            }
+
+        });
+    });
+
+</script>

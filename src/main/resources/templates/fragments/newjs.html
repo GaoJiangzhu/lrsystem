@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+    <div data-th-fragment="commonjs">
+        <script th:inline="javascript">
+            /*<![CDATA[*/
+            //这里有三组数据，作为列表查询中的三个下拉框选项
+            var data = [[${type}]];
+            var data2 = [[${type2}]];
+            var data3 = [[${type3}]];
+            function change(obj) {
+                var type = $(obj).find("option:selected").attr('type');
+                switch (type){
+                    case "text":
+                        $(obj).parent().find("select:gt(1)").remove();
+                        $(obj).parent().find("div").remove();
+                        $(obj).parent().find("input").remove();
+                        $(obj).parent().append("<input type=\"text\" class=\"form-control\" style=\"width: 150px;float: left;\"/>");
+                        break;
+                    case "select":
+                        $(obj).parent().find("select:gt(1)").remove();
+                        $(obj).parent().find("div").remove();
+                        $(obj).parent().find("input").remove();
+                        var content = "<select class=\"form-control\" style=\"width: 150px;height:34px;float: left;margin-left: 10px;\">";
+                        content += "<option value=''>请选择</option>";
+                        for (var key in data) {
+                            content += "<option value='"+key+"'>"+data[key]+"</option>";
+                        }
+                        content += "</select>";
+                        $(obj).parent().append(content);
+                        break;
+                    case "select2":
+                        $(obj).parent().find("select:gt(1)").remove();
+                        $(obj).parent().find("div").remove();
+                        $(obj).parent().find("input").remove();
+                        var content = "<select class=\"form-control\" style=\"width: 150px;height:34px;float: left;margin-left: 10px;\">";
+                        content += "<option value=''>请选择</option>";
+                        for (var key in data2) {
+                            content += "<option value='"+key+"'>"+data2[key]+"</option>";
+                        }
+                        content += "</select>";
+                        $(obj).parent().append(content);
+                        break;
+                    case "select3":
+                        $(obj).parent().find("select:gt(1)").remove();
+                        $(obj).parent().find("div").remove();
+                        $(obj).parent().find("input").remove();
+
+                        var content = "<select class=\"form-control\" style=\"width: 150px;height:34px;float: left;margin-left: 10px;\">";
+                        content += "<option value=''>请选择</option>";
+                        for (var key in data3) {
+                            content += "<option value='"+key+"'>"+data3[key]+"</option>";
+                        }
+                        content += "</select>";
+                        $(obj).parent().append(content);
+                        break;
+                    case "date":
+                        $(obj).parent().find("select:gt(1)").remove();
+                        $(obj).parent().find("div").remove();
+                        $(obj).parent().find("input").remove();
+                        $(obj).parent().append("<input type=\"date\" class=\"form-control\" style=\"width: 150px;float: left;\"/>");
+                        break;
+                    case "number":
+                        $(obj).parent().find("select:gt(1)").remove();
+                        $(obj).parent().find("div").remove();
+                        $(obj).parent().find("input").remove();
+                        $(obj).parent().append("<input type=\"number\" class=\"form-control\" style=\"width: 150px;float: left;\"/>");
+                        break;
+                    case "organ":
+                        $(obj).parent().find("select:gt(1)").remove();
+                        $(obj).parent().find("div").remove();
+                        $(obj).parent().find("input").remove();
+                        var content = "<input type=\"hidden\"  name=\"organId\"/><div style=\"position: relative;\" class=\"col-xs-5 col-sm-3 \">\n" +
+                            "<input type=\"text\" style=\"left: 0px;right: 0px;position: absolute;\" readonly class=\"col-xs-12 col-sm-12\" name=\"organ\" onclick=\"openOrgan(this)\"/>\n" +
+                            "<img src=\"../ace/assets/images/i_search.png\" height=\"20px\" width=\"20px\" alt=\"\" style=\"right: 0px;position: absolute;margin-top:4px;\" onclick=\"openOrgan(this)\"/>\n" +
+                            "<input type=\"hidden\"  name=\"organId\"/>\n" +
+                            "</div>";
+                        $(obj).parent().append(content);
+                        break;
+                    default:
+                        $(obj).parent().find("select:gt(1)").remove();
+                        $(obj).parent().find("div").remove();
+                        $(obj).parent().find("input").remove();
+                        $(obj).parent().append("<input type=\"text\" class=\"form-control\" style=\"width: 150px;float: left;\"/>");
+                        break;
+                }
+            }
+            /*]]>*/
+        </script>
+    </div>
+
+    <div data-th-fragment="search">
+        <div th:replace="fragments/newjs :: commonjs"></div>
+        <div th:replace="fragments/newjs :: open_organ"></div>
+        <div class="search_style">
+            <div class="form-horizontal" id="search_form">
+                <div class="row">
+                    <div class="col-xs-6 form-group">
+                        <select class="form-control" id="id1" style="width: 150px;float: left;margin-left: 100px;" onchange="change(this)">
+                            <option th:each="entry:${search}" th:value="${entry.key}" th:attr="type=${entry.type}" th:text="${entry.value}">用户</option>
+                        </select>
+                        <select class="form-control" style="width: 100px;float: left;margin-left: 10px;">
+                            <option th:each="item:${items}" th:value="${item.key}" th:text="${item.value}"></option>
+                        </select>
+                        <input type="text" class="form-control" style="width: 150px;float: left;"/>
+                    </div>
+                    <div class="col-xs-6 form-group">
+                        <select class="form-control" style="width: 150px;float: left;" onchange="change(this)">
+                            <option th:each="entry:${search}" th:value="${entry.key}" th:attr="type=${entry.type}" th:text="${entry.value}">用户</option>
+                        </select>
+                        <select class="form-control" style="width: 100px;float: left;margin-left: 10px;">
+                            <option th:each="item:${items}" th:value="${item.key}" th:text="${item.value}"></option>
+                        </select>
+                        <input type="text" class="form-control" style="width: 150px;float: left;"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 form-group" style="display:none;">
+                        <select class="form-control" style="width: 150px;float: left;margin-left: 100px;" onchange="change(this)">
+                            <option th:each="entry:${search}" th:value="${entry.key}" th:attr="type=${entry.type}" th:text="${entry.value}">用户</option>
+                        </select>
+                        <select class="form-control" style="width: 100px;float: left;margin-left: 10px;">
+                            <option th:each="item:${items}" th:value="${item.key}" th:text="${item.value}"></option>
+                        </select>
+                        <input type="text" class="form-control" style="width: 150px;float: left;"/>
+                    </div>
+                    <div class="col-xs-6 form-group"  style="display:none;">
+                        <select class="form-control" style="width: 150px;float: left;" onchange="change(this)">
+                            <option th:each="entry:${search}" th:value="${entry.key}" th:attr="type=${entry.type}" th:text="${entry.value}">用户</option>
+                        </select>
+                        <select class="form-control" style="width: 100px;float: left;margin-left: 10px;">
+                            <option th:each="item:${items}" th:value="${item.key}" th:text="${item.value}"></option>
+                        </select>
+                        <input type="text" class="form-control" style="width: 150px;float: left;"/>
+                    </div>
+                    <div class="col-xs-10 form-group align-center">
+                        <button class="btn btn-primary btn-bold" onclick="search()">
+                            <i class="ace-icon fa fa-search align-top bigger-125"></i>
+                            查询
+                        </button>
+                        <button class="btn btn-info btn-bold" onclick="reset_search()">
+                            <i class="ace-icon fa fa-refresh align-top bigger-125"></i>
+                            重置
+                        </button>
+                    </div>
+                    <div class="col-xs-2 form-group align-center">
+                        <div class="action-buttons">
+                            <a onclick="show1()" href="javascript:void(0)" class="blue bigger-200 show-details-btn" title="展开" id="open1" >
+                                <i class="ace-icon fa fa-angle-double-down"></i>
+                                <span class="sr-only"></span>
+                            </a>
+                            <a onclick="hide1()" href="javascript:void(0)" class="blue bigger-200 show-details-btn" style="display:none;" id="close1" title="关闭">
+                                <i class="ace-icon fa fa-angle-double-up"></i>
+                                <span class="sr-only"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-th-fragment="open_organ">
+        <!--弹出框选择机构-->
+        <div id="layer_open_organ_tree"  style="display:none">
+            <div class=" clearfix">
+                <div id="category">
+                    <div class="widget-body" style="border: 0px;">
+                        <div class="widget-main padding-8">
+                            <div id="treeDemo" class="ztree"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            /**************/
+            var setting = {
+                check: {
+                    enable: false
+                },
+                view: {
+                    dblClickExpand: false,
+                    showLine: false,
+                    selectedMulti: false
+                },
+                data: {
+                    simpleData: {
+                        enable: true,
+                        idKey: "id",
+                        pIdKey: "pId",
+                        rootPId: ""
+                    }
+                },
+                callback: {
+                    beforeClick: function (treeId, treeNode) {
+                        return true;
+                    }
+                }
+            };
+
+            function openOrgan(obj) {
+                $.ajax({
+                    url:"/organ/getTreeData",
+                    type:"post",
+                    datatype:"json",
+                    success:function (data) {
+                        if(data.status == SUCCESS){
+                            var zNodes = data.aaData;
+                            $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+                            var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+                            var nodes = treeObj.getNodes();
+                            for (var i = 0; i < nodes.length; i++) { //设置节点展开
+                                treeObj.expandNode(nodes[i], true, false, true);
+                            }
+                            layer.open({
+                                type: 1,
+                                title: '目标机构',
+                                maxmin: true,
+                                shadeClose: true, //点击遮罩关闭层
+                                area : ['400px' , '500px'],
+                                content:$('#layer_open_organ_tree'),
+                                btn:['提交','取消'],
+                                scrollbar: true,
+                                yes:function(index,layero){
+                                    node = treeObj.getSelectedNodes();
+                                    if (node.length == 0){
+                                        DuzUtils.notifyWarning("请选择机构");
+                                    }else{
+                                        if ($(obj).get(0).tagName == "INPUT") {
+                                            $(obj).val(node[0].name);
+                                        }else if($(obj).get(0).tagName == "IMG") {
+                                            $(obj).prev("input").val(node[0].name);
+                                        }
+
+                                        $(obj).parent().prev("input[name=organId]").val(node[0].id);
+                                        layer.close(index);
+                                    }
+
+                                }
+                            });
+                        }else {
+                            DuzUtils.notifyError(data.msg);
+                        }
+                    },
+                    error:function (data) {
+                        console.log(data);
+                    }
+                })
+            }
+        </script>
+    </div>
+
+    <div data-th-fragment="upload_component" style="width: 1000px">
+        <!--<script src="../ace/components/dropzone/dist/dropzone.js"></script>-->
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- PAGE CONTENT BEGINS -->
+                <div>
+                    <form action="../dummy.html" class="dropzone well" id="dropzone">
+                        <div class="fallback">
+                            <input name="file" type="file" multiple="" />
+                        </div>
+                    </form>
+                </div>
+                <input type="hidden" id="uploadpath"/>
+                <div id="preview-template" class="hide">
+                    <div class="dz-preview dz-file-preview ">
+                        <div class="dz-image">
+                            <img data-dz-thumbnail=""/>
+                        </div>
+
+                        <div class="dz-details mask_meta">
+                            <div class="dz-size">
+                                <span data-dz-size=""></span>
+                            </div>
+
+                            <div class="dz-filename">
+                                <span data-dz-name=""></span>
+                            </div>
+                            <!--<a href="#">-->
+                                <!--<div class="mask_div">-->
+                                    <!--<div style="margin: 0 auto;height:120px;line-height: 120px;">-->
+                                        <!--&lt;!&ndash;<span id="span_pre" class="badge">预览</span>&ndash;&gt;-->
+                                        <!--<button class="btn btn-light">预览</button>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                        </div>
+
+                        <div class="dz-progress">
+                            <span class="dz-upload" data-dz-uploadprogress=""></span>
+                        </div>
+
+                        <div class="dz-error-message">
+                            <span data-dz-errormessage=""></span>
+                        </div>
+
+                        <div class="dz-success-mark">
+                            <span class="fa-stack fa-lg bigger-150">
+                                <i class="fa fa-circle fa-stack-2x white"></i>
+                                <i class="fa fa-check fa-stack-1x fa-inverse green"></i>
+                            </span>
+                        </div>
+
+                        <div class="dz-error-mark">
+                            <span class="fa-stack fa-lg bigger-150">
+                                <i class="fa fa-circle fa-stack-2x white"></i>
+                                <i class="fa fa-remove fa-stack-1x fa-inverse red"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div><!-- PAGE CONTENT ENDS -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+        <script type="text/javascript">
+            jQuery(function($){
+                try {
+                    Dropzone.autoDiscover = false;
+                    $('#dropzone').dropzone({
+                        url: "/upload/uploading",
+                        type:"post",
+                        previewTemplate: $('#preview-template').html(),
+                        thumbnailHeight: 120,
+                        thumbnailWidth: 120,
+                        addRemoveLinks: true,
+                        dictRemoveFile: "删除文件",
+                        maxFilesize: 0.5,
+                        acceptedFiles: ".xls,.xlsx,.zip",
+                        paramName: "file",
+                        uploadMultiple:true,
+                        dictDefaultMessage :
+                            '<span class="bigger-150 bolder"><i class="ace-icon fa fa-caret-right red"></i> Drop files</span> to upload \
+                            <span class="smaller-80 grey">(or click)</span> <br /> \
+                            <i class="upload-icon ace-icon fa fa-cloud-upload blue fa-3x"></i>'
+                        ,
+
+                        thumbnail: function(file, dataUrl) {
+                            if (file.previewElement) {
+                                $(file.previewElement).removeClass("dz-file-preview");
+                                var images = $(file.previewElement).find("[data-dz-thumbnail]").each(function() {
+                                    var thumbnailElement = this;
+                                    thumbnailElement.alt = file.name;
+                                    thumbnailElement.src = dataUrl;
+                                });
+                                setTimeout(function() { $(file.previewElement).addClass("dz-image-preview"); }, 1);
+                            }
+                        },
+                        init: function () {
+                            var myDropzone = this;
+                            myDropzone.on('success', function (files, response) {
+                                $("#uploadpath").val($("#uploadpath").val()+","+response.aaData);
+                                //文件上传成功之后的操作
+                                console.log(response);
+                            });
+                        }
+                    });
+                } catch(e) {
+                    alert('Dropzone.js does not support older browsers!');
+                }
+            });
+        </script>
+    </div>
+
+    <div data-th-fragment="upload_compo1">
+
+        <script type="text/javascript" src="../new/Widget/webuploader/0.1.5/webuploader.min.js"></script>
+        <script type="text/javascript">
+            // 当domReady的时候开始初始化
+            $(function () {
+                var $wrap = $('.uploader-list-container'),
+
+                    // 图片容器
+                    $queue = $('<ul class="filelist"></ul>')
+                        .appendTo($wrap.find('.queueList')),
+
+                    // 状态栏，包括进度和控制按钮
+                    $statusBar = $wrap.find('.statusBar'),
+
+                    // 文件总体选择信息。
+                    $info = $statusBar.find('.info'),
+
+                    // 上传按钮
+                    $upload = $wrap.find('.uploadBtn'),
+
+                    // 没选择文件之前的内容。
+                    $placeHolder = $wrap.find('.placeholder'),
+
+                    $progress = $statusBar.find('.progress').hide(),
+
+                    // 添加的文件数量
+                    fileCount = 0,
+
+                    // 添加的文件总大小
+                    fileSize = 0,
+
+                    // 优化retina, 在retina下这个值是2
+                    ratio = window.devicePixelRatio || 1,
+
+                    // 缩略图大小
+                    thumbnailWidth = 110 * ratio,
+                    thumbnailHeight = 110 * ratio,
+
+                    // 可能有pedding, ready, uploading, confirm, done.
+                    state = 'pedding',
+
+                    // 所有文件的进度信息，key为file id
+                    percentages = {},
+
+                    supportTransition = (function () {
+                        var s = document.createElement('p').style,
+                            r = 'transition' in s ||
+                                'WebkitTransition' in s ||
+                                'MozTransition' in s ||
+                                'msTransition' in s ||
+                                'OTransition' in s;
+                        s = null;
+                        return r;
+                    })(),
+
+                    // WebUploader实例
+                    uploader;
+
+                if (!WebUploader.Uploader.support('flash') && WebUploader.browser.ie) {
+
+                    // flash 安装了但是版本过低。
+                    if (flashVersion) {
+                        (function (container) {
+                            window['expressinstallcallback'] = function (state) {
+                                switch (state) {
+                                    case 'Download.Cancelled':
+                                        alert('您取消了更新！')
+                                        break;
+
+                                    case 'Download.Failed':
+                                        alert('安装失败')
+                                        break;
+
+                                    default:
+                                        alert('安装已成功，请刷新！');
+                                        break;
+                                }
+                                delete window['expressinstallcallback'];
+                            };
+
+                            var swf = 'expressInstall.swf';
+                            // insert flash object
+                            var html = '<object type="application/' +
+                                'x-shockwave-flash" data="' + swf + '" ';
+
+                            if (WebUploader.browser.ie) {
+                                html += 'classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" ';
+                            }
+
+                            html += 'width="100%" height="100%" style="outline:0">' +
+                                '<param name="movie" value="' + swf + '" />' +
+                                '<param name="wmode" value="transparent" />' +
+                                '<param name="allowscriptaccess" value="always" />' +
+                                '</object>';
+
+                            container.html(html);
+
+                        })($wrap);
+
+                        // 压根就没有安转。
+                    } else {
+                        $wrap.html('<a href="http://www.adobe.com/go/getflashplayer" target="_blank" border="0"><img alt="get flash player" src="http://www.adobe.com/macromedia/style_guide/images/160x41_Get_Flash_Player.jpg" /></a>');
+                    }
+
+                    return;
+                } else if (!WebUploader.Uploader.support()) {
+                    alert('Web Uploader 不支持您的浏览器！');
+                    return;
+                }
+
+                // 实例化
+                uploader = WebUploader.create({
+                    pick: {
+                        id: '#filePicker-2',
+                        label: '点击选择上传文件'
+                    },
+                    formData: {
+                        uid: 123
+                    },
+                    dnd: '#dndArea',
+                    paste: '#uploader',
+                    swf: 'js/webuploader/Uploader.swf',
+                    chunked: false,
+                    chunkSize: 512 * 1024,
+                    server: '/upload/uploading',
+                    // 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
+                    disableGlobalDnd: true,
+                    fileNumLimit: 300,
+                    fileSizeLimit: 200 * 1024 * 1024,    // 200 M
+                    fileSingleSizeLimit: 50 * 1024 * 1024,    // 50 M
+                    accept: {
+                        title: 'file',
+                        extensions: 'xls,xlsx',
+                        mimeTypes: 'application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                    }
+                });
+
+                // 拖拽时不接受 js, txt 文件。
+                uploader.on('dndAccept', function (items) {
+                    var denied = false,
+                        len = items.length,
+                        i = 0,
+                        // 修改js类型
+                        unAllowed = 'text/plain;application/javascript ';
+
+                    for (; i < len; i++) {
+                        // 如果在列表里面
+                        if (~unAllowed.indexOf(items[i].type)) {
+                            denied = true;
+                            break;
+                        }
+                    }
+
+                    return !denied;
+                });
+
+                uploader.on('dialogOpen', function () {
+                    console.log('here');
+                });
+                // 添加“添加文件”的按钮，
+                uploader.addButton({
+                    id: '#filePicker2',
+                    label: '继续添加'
+                });
+
+                uploader.on('ready', function () {
+                    window.uploader = uploader;
+                });
+
+                uploader.on('fileQueued', function (file) {
+                    uploader.upload();
+                });
+
+                // 当有文件添加进来时执行，负责view的创建
+                function addFile(file) {
+                    var $li = $('<li id="' + file.id + '">' +
+                        '<p class="title">' + file.name + '</p>' +
+                        // '<p class="imgWrap"></p>'+
+                        '<img src="../imgs/excel.png"></img>' +
+                        // '<p class="progress"><span></span></p>' +
+                        '</li>'),
+
+                        $btns = $('<div class="file-panel">' +
+                            '<span class="cancel">删除</span></div>').appendTo( $li ),
+                        // $prgress = $li.find('p.progress span'),
+                        $info = $('<p class="error"></p>'),
+
+                        showError = function (code) {
+                            switch (code) {
+                                case 'exceed_size':
+                                    text = '文件大小超出';
+                                    break;
+
+                                case 'interrupt':
+                                    text = '上传暂停';
+                                    break;
+
+                                default:
+                                    text = '上传失败，请重试';
+                                    break;
+                            }
+
+                            $info.text(text).appendTo($li);
+                        };
+                    percentages[file.id] = [file.size, 0];
+                    file.rotation = 0;
+                    file.on('statuschange', function (cur, prev) {
+                        if (prev === 'progress') {
+                            // $prgress.hide().width(0);
+                        } else if (prev === 'queued') {
+                            $li.off('mouseenter mouseleave');
+                            // $btns.remove();
+                        }
+
+                        // 成功
+                        if (cur === 'error' || cur === 'invalid') {
+                            console.log(file.statusText);
+                            showError(file.statusText);
+                            percentages[file.id][1] = 1;
+                        } else if (cur === 'interrupt') {
+                            showError('interrupt');
+                        } else if (cur === 'queued') {
+                            percentages[file.id][1] = 0;
+                        } else if (cur === 'progress') {
+                            $info.remove();
+                            // $prgress.css('display', 'block');
+                        } else if (cur === 'complete') {
+                            $li.append('<span class="success"></span>');
+                        }
+
+                        $li.removeClass('state-' + prev).addClass('state-' + cur);
+                    });
+
+                    $li.on('mouseenter', function () {
+                        $btns.stop().animate({height: 30});
+                    });
+
+                    $li.on('mouseleave', function () {
+                        $btns.stop().animate({height: 0});
+                    });
+
+                    $btns.on('click', 'span', function () {
+                        var index = $(this).index(),
+                            deg;
+
+                        switch (index) {
+                            case 0:
+                                uploader.removeFile(file);
+                                return;
+
+                            case 1:
+                                file.rotation += 90;
+                                break;
+
+                            case 2:
+                                file.rotation -= 90;
+                                break;
+                        }
+                    });
+
+                    $li.appendTo($queue);
+                }
+                var uploadpath = [];
+
+                //上传组件触发事件
+                // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+                uploader.on( 'uploadSuccess', function( file ,data) {
+                    console.log(data);
+                    $("#uploadpath").val($("#uploadpath").val()+","+data.aaData);
+                    uploadpath[file.id] = data.aaData;
+                    $( '#'+file.id ).addClass('upload-state-success');
+
+                });
+
+                // 文件上传失败，显示上传出错。
+                uploader.on( 'uploadError', function( file ) {
+                    $( '#'+file.id ).addClass('upload-state-error');
+                });
+
+                // 完成上传完了，成功或者失败，先删除进度条。
+                uploader.on( 'uploadComplete', function( file ,data ) {
+                    console.log(data);
+                    $( '#'+file.id ).find('.progress-box').fadeOut();
+                });
+
+
+                // 负责view的销毁
+                function removeFile(file) {
+                    alert("remove");
+                    console.log(file);
+                    var $li = $('#' + file.id);
+                    delete percentages[file.id];
+                    delete uploadpath[file.id];
+                    $("#uploadpath").val(uploadpath.join(","));
+                    updateTotalProgress();
+                    $li.off().find('.file-panel').off().end().remove();
+                }
+
+                function updateTotalProgress() {
+                    var loaded = 0,
+                        total = 0,
+                        spans = $progress.children(),
+                        percent;
+
+                    $.each(percentages, function (k, v) {
+                        total += v[0];
+                        loaded += v[0] * v[1];
+                    });
+
+                    percent = total ? loaded / total : 0;
+
+                    spans.eq(0).text(Math.round(percent * 100) + '%');
+                    spans.eq(1).css('width', Math.round(percent * 100) + '%');
+                    updateStatus();
+                }
+
+                function updateStatus() {
+                    var text = '', stats;
+
+                    if (state === 'ready') {
+                        text = '选中' + fileCount + '个文件，共' +
+                            WebUploader.formatSize(fileSize) + '。';
+                    } else if (state === 'confirm') {
+                        stats = uploader.getStats();
+                        if (stats.uploadFailNum) {
+                            text = '已成功上传' + stats.successNum + '张照片至XX相册，' +
+                                stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
+                        }
+
+                    } else {
+                        stats = uploader.getStats();
+                        text = '共' + fileCount + '张（' +
+                            WebUploader.formatSize(fileSize) +
+                            '），已上传' + stats.successNum + '张';
+
+                        if (stats.uploadFailNum) {
+                            text += '，失败' + stats.uploadFailNum + '张';
+                        }
+                    }
+
+                    $info.html(text);
+                }
+
+                function setState(val) {
+                    var file, stats;
+
+                    if (val === state) {
+                        return;
+                    }
+
+                    $upload.removeClass('state-' + state);
+                    $upload.addClass('state-' + val);
+                    state = val;
+
+                    switch (state) {
+                        case 'pedding':
+                            $placeHolder.removeClass('element-invisible');
+                            $queue.hide();
+                            $statusBar.addClass('element-invisible');
+                            uploader.refresh();
+                            break;
+
+                        case 'ready':
+                            $placeHolder.addClass('element-invisible');
+                            $('#filePicker2').removeClass('element-invisible');
+                            $queue.show();
+                            $statusBar.removeClass('element-invisible');
+                            uploader.refresh();
+                            break;
+
+                        case 'uploading':
+                            $('#filePicker2').addClass('element-invisible');
+                            $progress.show();
+                            $upload.text('暂停上传');
+                            break;
+
+                        case 'paused':
+                            $progress.show();
+                            $upload.text('继续上传');
+                            break;
+
+                        case 'confirm':
+                            $progress.hide();
+                            $('#filePicker2').removeClass('element-invisible');
+                            $upload.text('开始上传');
+
+                            stats = uploader.getStats();
+                            if (stats.successNum && !stats.uploadFailNum) {
+                                setState('finish');
+                                return;
+                            }
+                            break;
+                        case 'finish':
+                            stats = uploader.getStats();
+                            if (stats.successNum) {
+                                // alert('上传成功');
+                            } else {
+                                // 没有成功的图片，重设
+                                state = 'done';
+                                location.reload();
+                            }
+                            break;
+                    }
+
+                    updateStatus();
+                }
+
+                uploader.onUploadProgress = function (file, percentage) {
+                    var $li = $('#' + file.id),
+                        $percent = $li.find('.progress span');
+
+                    $percent.css('width', percentage * 100 + '%');
+                    percentages[file.id][1] = percentage;
+                    updateTotalProgress();
+                };
+
+                uploader.onFileQueued = function (file) {
+                    fileCount++;
+                    fileSize += file.size;
+
+                    if (fileCount === 1) {
+                        $placeHolder.addClass('element-invisible');
+                        $statusBar.show();
+                    }
+
+                    addFile(file);
+                    setState('ready');
+                    updateTotalProgress();
+                };
+
+                uploader.onFileDequeued = function (file) {
+                    fileCount--;
+                    fileSize -= file.size;
+
+                    if (!fileCount) {
+                        setState('pedding');
+                    }
+
+                    removeFile(file);
+                    updateTotalProgress();
+
+                };
+
+                uploader.on('all', function (type) {
+                    var stats;
+                    switch (type) {
+                        case 'uploadFinished':
+                            setState('confirm');
+                            break;
+
+                        case 'startUpload':
+                            setState('uploading');
+                            break;
+
+                        case 'stopUpload':
+                            setState('paused');
+                            break;
+
+                    }
+                });
+
+                uploader.onError = function (code) {
+                    // alert('Eroor: ' + code);
+                    alert("该文件已上传");
+                };
+
+                $upload.on('click', function () {
+                    if ($(this).hasClass('disabled')) {
+                        return false;
+                    }
+
+                    if (state === 'ready') {
+                        uploader.upload();
+                    } else if (state === 'paused') {
+                        uploader.upload();
+                    } else if (state === 'uploading') {
+                        uploader.stop();
+                    }
+                });
+
+                $info.on('click', '.retry', function () {
+                    uploader.retry();
+                });
+
+                $info.on('click', '.ignore', function () {
+                    alert('todo');
+                });
+
+                $upload.addClass('state-' + state);
+                updateTotalProgress();
+            });
+        </script>
+    </div>
+</body>
+</html>

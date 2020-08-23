@@ -1,0 +1,875 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--suppress ALL-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <meta name="description" content="and Validation" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="../ace/assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../new/css/style.css"/>
+    <link rel="stylesheet" href="../ace/components/_mod/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="../ace/components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../new/css/bootstrap-datetimepicker.css" />
+
+    <link rel="stylesheet" href="../ace/assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <link rel="stylesheet" href="../ace/components/select2/dist/css/select2.css" />
+
+    <script src="../ace/components/jquery/dist/jquery.js"></script>
+
+    <script src="../ace/components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../ace/components/fuelux/js/wizard.js"></script>
+    <script src="../ace/components/select2/dist/js/select2.js"></script>
+    <script src="../ace/assets/js/src/elements.wizard.js"></script>
+    <script src="../ace/components/jquery-ui/jquery-ui.js"></script>
+    <script src="../ace/assets/js/src/ace.js"></script>
+    <script src="../ace/components/select2/dist/js/select2.js"></script>
+    <script src="../ace/components/moment/moment.js"></script>
+    <script src="../new/js/bootstrap-datetimepicker.js"></script>
+    <script src="../ace/components/jquery-validation/dist/jquery.validate.js"></script>
+    <script type="text/javascript" src="../business/base.js"></script>
+    <!--easyui-->
+    <link rel="stylesheet" type="text/css" href="../js/easyUI/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../js/easyUI/icon.css">
+    <link rel="stylesheet" type="text/css" href="../js/easyUI/demo.css">
+    <script type="text/javascript" src="../js/easyUI/jquery.easyui.min.js"></script>
+
+
+    <script type="text/javascript">
+        jQuery(function($) {
+
+            var $validation = false;
+            $('#fuelux-wizard-container')
+                .ace_wizard({
+                    //step: 2 //optional argument. wizard will jump to step "2" at first
+                    //buttons: '.wizard-actions:eq(0)'
+                })
+                .on('actionclicked.fu.wizard' , function(e, info){
+                    if(info.step == 1 && $validation) {
+                        if(!$('#validation-form').valid()) e.preventDefault();
+                    }
+                })
+                //.on('changed.fu.wizard', function() {
+                //})
+                .on('finished.fu.wizard', function(e) {
+                    bootbox.dialog({
+                        message: "Thank you! Your information was successfully saved!",
+                        buttons: {
+                            "success" : {
+                                "label" : "OK",
+                                "className" : "btn-sm btn-primary"
+                            }
+                        }
+                    });
+                }).on('stepclick.fu.wizard', function(e){
+                //e.preventDefault();
+                //this will prevent clicking and selecting steps
+            });
+
+        })
+    </script>
+</head>
+
+<body class="no-skin">
+<div>
+    <div class="widget-body">
+        <div class="widget-main">
+            <!-- #section:plugins/fuelux.wizard -->
+            <div id="fuelux-wizard-container">
+                <div>
+                    <!-- #section:plugins/fuelux.wizard.steps -->
+                    <ul class="steps">
+                        <li data-step="1" class="active">
+                            <span class="step">1</span>
+                            <span class="title">单条荐购</span>
+                        </li>
+
+                        <li data-step="2">
+                            <span class="step">2</span>
+                            <span class="title">荐购查重</span>
+                        </li>
+
+                        <li data-step="3">
+                            <span class="step">3</span>
+                            <span class="title">新增荐购</span>
+                        </li>
+
+
+                    </ul>
+
+                    <!-- /section:plugins/fuelux.wizard.steps -->
+                </div>
+
+                <hr />
+
+                <!-- #section:plugins/fuelu.wizard.container -->
+                <div class="step-content pos-rel">
+                    <div class="step-pane active" data-step="1">
+                            <div class="form-group col-sm-12">
+                                <label class="col-sm-4 "></label>
+                                <label class="col-sm-4 ">
+                                    <input type="radio" name="matching" checked value="accurate" style="width: 30px">精准匹配
+                                </label>
+                                <label class="col-sm-4 ">
+                                    <input type="radio" name="matching" value="vague" style="width: 30px">模糊匹配
+                                </label>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="col-sm-2">题名： </label>
+                                <div class="col-sm-9">
+                                    <input type="text" id="title" placeholder="题名"  class="col-xs-12">
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="col-sm-2">EISSN：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" id="eissn"  placeholder="EISSN"  class="col-xs-12"/>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="col-sm-2">EISBN：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" id="eisbn"  placeholder="EISBN"  class="col-xs-12"/>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="col-sm-2">PISSN：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" id="pissn"  placeholder="PISSN"  class="col-xs-12"/>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <label class="col-sm-2">PISBN：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" id="pisbn"  placeholder="PISBN"  class="col-xs-12"/>
+                                </div>
+                            </div>
+
+
+                    </div>
+
+                    <div class="step-pane" data-step="2">
+                        <div class="center">
+                            <div id="homese" class="tab-pane active col-sm-12" >
+                                <table class="table table-striped table-bordered table-hover" id="datas">
+                                    <thead>
+                                    <tr>
+                                        <th colspan="6">已荐购，未订购</th>
+                                    </tr>
+                                    <tr>
+                                        <th width="">题名</th>
+                                        <th width="">PISSN</th>
+                                        <th width="">PISBN</th>
+                                        <th width="">EISSN</th>
+                                        <th width="">EISBN</th>
+                                        <th width="">审核状态</th>
+                                    </tr>
+
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <table class="table table-striped table-bordered table-hover" id="dataes">
+                                    <thead>
+                                    <tr>
+                                        <th colspan="6">已荐购，已订购</th>
+                                    </tr>
+                                    <tr>
+                                        <th width="">题名</th>
+                                        <th width="">PISSN</th>
+                                        <th width="">PISBN</th>
+                                        <th width="">EISSN</th>
+                                        <th width="">EISBN</th>
+                                        <th width="">审核状态</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <table class="table table-striped table-bordered table-hover" id="repatData">
+                                    <thead>
+                                    <tr>
+                                        <th colspan="7">可重复荐购</th>
+                                    </tr>
+                                    <tr>
+                                        <th width="">编号</th>
+                                        <th width="">题名</th>
+                                        <th width="">PISSN</th>
+                                        <th width="">PISBN</th>
+                                        <th width="">EISSN</th>
+                                        <th width="">EISBN</th>
+                                        <th width="">审核状态</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-pane" data-step="3">
+                        <div class="center">
+                            <div id="homes" class="tab-pane active col-sm-12">
+                                <form id="validation-form">
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2"><i style="color: red">*</i>题名：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="col-xs-10"  placeholder="题名" id="new_title" name="title"  >
+                                    </div>
+                                    <div class="col-4"> <span class="Validform_checktip"></span></div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">其他题名： </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="otherTitle" name="otherTitle" placeholder="其他题名"  class="col-xs-10">
+                                    </div>
+                                </div>
+                                <!--<div class="form-group col-sm-12">-->
+                                    <!--<label class="col-sm-2">分辑名： </label>-->
+                                    <!--<div class="col-sm-9">-->
+                                        <!--<input type="text" id="seriesTitle" placeholder="分辑名"  class="col-xs-10">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="form-group col-sm-12">-->
+                                    <!--<label class="col-sm-2">分辑号： </label>-->
+                                    <!--<div class="col-sm-9">-->
+                                        <!--<input type="text" id="seriesNumber" placeholder="分辑号"  class="col-xs-10">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">责任者： </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="author" name="author" placeholder="责任者"  class="col-xs-10">
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">EISSN：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="new_eissn" class="col-xs-10" placeholder="EISSN" name="new_eissn">
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">EISBN：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="new_eisbn" class="col-xs-10" placeholder="EISBN" name="new_eisbn">
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">PISSN：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="new_pissn" class="col-xs-10" placeholder="PISSN" name="new_pissn">
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">PISBN：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="new_pisbn" class="col-xs-10" placeholder="PISBN" name="new_pisbn">
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">套：</label>
+                                    <div class="col-sm-9">
+                                        <!--<select  id="cover" class="col-xs-10"></select>-->
+                                        <!--<input class="easyui-combogrid" class="col-xs-10" />-->
+                                        <input id="cover" name="cover"  style="float: left;width: 900px;">
+                                    </div>
+                                </div>
+                                <!--<div class="form-group col-sm-12">-->
+                                    <!--<label class="col-sm-2">种类：</label>-->
+                                    <!--<div class="col-sm-9">-->
+                                        <!--<input type="text" id="kindId"  placeholder="种类"  class="col-xs-10"/>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">卷期：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="coilingPeriod" name="coilingPeriod"  placeholder="卷期"  class="col-xs-10"/>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">学科：</label>
+                                    <div class="col-sm-9">
+                                        <select id="subject" class="col-xs-10">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2"><i style="color: red">*</i>出版社：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="publisher"  name="publisher" placeholder="出版社"  class="col-xs-10" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">国别：</label>
+                                    <div class="col-sm-9">
+                                        <select id="country" class="col-xs-10">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">出版年：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="pubYear"  placeholder="出版年" class="col-xs-10" readonly="readonly"/>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">创刊年：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="foundedYear" placeholder="创刊年" class="col-xs-10" readonly="readonly" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">出版频率：</label>
+                                    <div class="col-sm-9">
+                                        <select id="pubFeq" class="col-xs-10">
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--<div class="form-group col-sm-12">-->
+                                    <!--<label class="col-sm-2">分类号：</label>-->
+                                    <!--<div class="col-sm-9">-->
+                                        <!--<input type="text" id="classiNumber"  placeholder="请控制在100个字"  class="col-xs-10"/>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">期刊URL地址：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="url"  placeholder="期刊URL地址"  class="col-xs-10"/>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">载体：</label>
+                                    <div class="col-sm-9">
+                                        <select  id="carrier" class="col-xs-10"> </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">文献类型：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="type"  placeholder="文献类型"  class="col-xs-10"/>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">出版模式：</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="pubPattern"  placeholder="出版模式"  class="col-xs-10"/>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">出版状态：</label>
+                                    <div class="col-sm-9">
+                                        <select id="pubStatus" class="col-xs-10">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2"><i style="color: red">*</i>语种：</label>
+                                    <div class="col-sm-9">
+                                        <select id="language"  multiple=""  data-placeholder="请选择语种" class="col-xs-9 select2" style="margin-left: 30px ">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2">内容简介：</label>
+                                    <div class="col-sm-9">
+                                        <textarea class="textarea col-xs-10" id="Intro" style="height: 247px"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-sm-2 ">推荐理由：  </label>
+                                    <div class="col-sm-9">
+                                        <textarea class="textarea col-xs-10" id="reason" style="height: 247px"></textarea>
+                                    </div>
+                                </div>
+                                </form>
+                                <div>
+                                    <button class="btn btn-primary radius" onclick="submit_resource()">提交</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- /section:plugins/fuelux.wizard.container -->
+            </div>
+
+            <hr />
+            <div class="wizard-actions">
+                <!-- #section:plugins/fuelux.wizard.buttons -->
+                <button class="btn btn-prev" onclick="opennext()">
+                    <i class="ace-icon fa fa-arrow-left" ></i>
+                    上一步
+                </button>
+
+                <button class="btn btn-success btn-next" data-last="结束" onclick="nextstep()" id="nextbutton">
+                    下一步
+                    <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+                </button>
+
+                <!-- /section:plugins/fuelux.wizard.buttons -->
+            </div>
+
+            <!-- /section:plugins/fuelux.wizard -->
+        </div><!-- /.widget-main -->
+    </div><!-- /.widget-body -->
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    var mapObj = new Map()
+    function opennext(){
+        document.getElementById("nextbutton").disabled=false;
+    }
+    function nextstep() {
+        if($("input[name=repeats]:checked").val()!=null){
+            var repeat=mapObj.get($("input[name=repeats]:checked").val());
+            $("#new_title").val(repeat.title);
+            $("#otherTitle").val(repeat.otherTitle);
+            $("#author").val(repeat.author);
+            $("#pissn").val(repeat.pissn);
+            $("#pisbn").val(repeat.pisbn);
+            $("#eissn").val(repeat.eissn);
+            $("#eisbn").val(repeat.eisbn)
+            $('input[name="cover"]').val(repeat.cover)
+            $("#coilingPeriod").val(repeat.coilingPeriod);
+            $("#subject").val(repeat.subject);
+            $("#publisher").val(repeat.publisher);
+            $("#country").val(repeat.country);
+            $("#pubYear").val(repeat.pubYear);
+            $("#foundedYear").val(repeat.foundedYear);
+            $("#pubFeq").val(repeat.pubFeq);
+            $("#url").val(repeat.url);
+            $("#carrier").val(repeat.carrier);
+            $("#type").val(repeat.type);
+            $("#pubPattern").val(repeat.pubPattern);
+            $("#pubStatus").val(repeat.pubStatus);
+            // $("#language").val(repeat.language);
+            var arr=repeat.language.split(",");
+            $(".select2").select2().val(arr).trigger("change");
+            $("#Intro").val(repeat.Intro);
+            $("#reason").val(repeat.reason);
+        }
+        $("#datas tbody").html("");
+        $("#dataes tbody").html("");
+        $("#repatData tbody").html("");
+        var data = {
+            matching:$("input[name=matching]:checked").val(),
+            title:$("#title").val(),
+            pissn:$("#pissn").val(),
+            pisbn:$("#pisbn").val(),
+            eissn:$("#eissn").val(),
+            eisbn:$("#eisbn").val(),
+        }
+        $.ajax({
+            url:"findRepetition",
+            type:"post",
+            datatype:"json",
+            data:data,
+            success:function (data) {
+                var notOrderList=data.aaData.notOrderList
+                var onOrderList=data.aaData.onOrderList
+                var repeatedRecommendList=data.aaData.repeatedRecommendList
+                if(onOrderList!=null&&onOrderList!=""&&onOrderList.length!=0){
+                    for(i in onOrderList){
+
+                        var data = onOrderList[i];
+                        var flowstatus;
+                        if(data.flowStatus==0){
+                            flowstatus="荐购待审核"
+                        }else if(data.flowStatus==1){
+                            flowstatus="荐购初审通过"
+                        }else if(data.flowStatus==2){
+                            flowstatus="荐购初审未通过"
+                        }else if(data.flowStatus==3){
+                            flowstatus="荐购复审通过"
+                        }else if(data.flowStatus==4){
+                            flowstatus="荐购复审未通过"
+                        }
+                        var tbBody ="<tr><td>";
+
+                        tbBody += data.title == null ? '</td><td>' : data.title+"</td><td>";
+                        tbBody += data.pissn == null ? '</td><td>' : data.pissn+"</td><td>";
+                        tbBody += data.pisbn == null ? '</td><td>' : data.pisbn+"</td><td>";
+                        tbBody += data.eissn == null ? '</td><td>' : data.eissn+"</td><td>";
+                        tbBody += data.eisbn == null ? '</td><td>' : data.eisbn+"</td><td>";
+                        tbBody += flowstatus+"</td></tr>";
+                        $("#dataes").append(tbBody);
+
+                    }
+                }
+                if(notOrderList!=null&&notOrderList!=""&&notOrderList.length!=0){
+                    for(j in notOrderList){
+                        var data = notOrderList[j]
+                        var flowstatus;
+                        if(data.flowStatus==0){
+                            flowstatus="荐购待审核"
+                        }else if(data.flowStatus==1){
+                            flowstatus="荐购初审通过"
+                        }else if(data.flowStatus==2){
+                            flowstatus="荐购初审未通过"
+                        }else if(data.flowStatus==3){
+                            flowstatus="荐购复审通过"
+                        }else if(data.flowStatus==4){
+                            flowstatus="荐购复审未通过"
+                        }
+                        var tbBody ="<tr><td>";
+                        tbBody += data.title == null ? '</td><td>' : data.title+"</td><td>";
+                        tbBody += data.pissn == null ? '</td><td>' : data.pissn+"</td><td>";
+                        tbBody += data.pisbn == null ? '</td><td>' : data.pisbn+"</td><td>";
+                        tbBody += data.eissn == null ? '</td><td>' : data.eissn+"</td><td>";
+                        tbBody += data.eisbn == null ? '</td><td>' : data.eisbn+"</td><td>";
+                        tbBody += flowstatus+"</td></tr>";
+                        $("#datas").append(tbBody);
+                    }
+                }
+                if(repeatedRecommendList!=null&&repeatedRecommendList!=""&&repeatedRecommendList.length!=0){
+                    for(j in repeatedRecommendList){
+                        var data = repeatedRecommendList[j];
+                        var flowstatus;
+                        if(data.flowStatus==0){
+                            flowstatus="荐购待审核"
+                        }else if(data.flowStatus==1){
+                            flowstatus="荐购初审通过"
+                        }else if(data.flowStatus==2){
+                            flowstatus="荐购初审未通过"
+                        }else if(data.flowStatus==3){
+                            flowstatus="荐购复审通过"
+                        }else if(data.flowStatus==4){
+                            flowstatus="荐购复审未通过"
+                        }
+                        mapObj.clear();
+                        mapObj.set(data.id,data);
+                        var tbBody ="<tr><td>";
+                        tbBody += "<label><input type='radio' name='repeats' value='"+data.id+"' ><span class='lbl'></td><td>";
+                        tbBody += data.title == null ? '</td><td>' : data.title+"</td><td>";
+                        tbBody += data.pissn == null ? '</td><td>' : data.pissn+"</td><td>";
+                        tbBody += data.pisbn == null ? '</td><td>' : data.pisbn+"</td><td>";
+                        tbBody += data.eissn == null ? '</td><td>' : data.eissn+"</td><td>";
+                        tbBody += data.eisbn == null ? '</td><td>' : data.eisbn+"</td><td>";
+                        tbBody += flowstatus+"</td></tr>";
+                        $("#repatData").append(tbBody);
+                    }
+                }
+                var matching=$("input[name=matching]:checked").val();
+                if(matching=="accurate"){
+                    if(onOrderList!=null&&onOrderList!=""&&onOrderList.length!=0){
+                        document.getElementById("nextbutton").setAttribute("disabled", true);
+                    }
+                    if(notOrderList!=null&&notOrderList!=""&&notOrderList.length!=0){
+                        for(z in notOrderList){
+                            if(notOrderList[z].flowStatus==3){
+                                document.getElementById("nextbutton").setAttribute("disabled", true);
+                                break;
+                            }
+                        }
+                    }
+                }
+            },
+            error:function (data) {
+                DuzUtils.notifySuccess("操作失败");
+            }
+        })
+
+        if($("#title").val()!=""){
+            $("#new_title").val($("#title").val());
+            $("#new_title").attr("disabled",true);
+        }
+        if($("#pissn").val()!=""){
+            $("#new_pissn").val($("#pissn").val());
+            $("#new_pissn").attr("disabled",true);
+        }
+        if($("#pisbn").val()!=""){
+            $("#new_pisbn").val($("#pisbn").val());
+            $("#new_pisbn").attr("disabled",true);
+        }
+        if($("#eissn").val()!=""){
+            $("#new_eissn").val($("#eissn").val());
+            $("#new_eissn").attr("disabled",true);
+        }
+        if($("#eisbn").val()!=""){
+            $("#new_eisbn").val($("#eisbn").val());
+            $("#new_eisbn").attr("disabled",true);
+        }
+    }
+
+
+    function submit_resource(){
+
+        if (!$("#validation-form").valid()) {
+
+            return false;
+        }
+        var str2value= $('#language').select2('data');
+        var languages = "";
+        if (str2value.length ==0){
+            DuzUtils.notifyWarning("请选择语种");
+            return;
+        }else {
+            for (var i = 0; i < str2value.length; i++) {
+                languages += str2value[i].id;
+                if (i<str2value.length-1){
+                    languages += ",";
+                }
+            }
+        }
+        var data = {
+            title:$("#new_title").val(),
+            otherTitle:$("#otherTitle").val(),
+            author:$("#author").val(),
+            pissn:$("#new_pissn").val(),
+            pisbn:$("#new_pisbn").val(),
+            eissn:$("#new_eissn").val(),
+            eisbn:$("#new_eisbn").val(),
+            coverId:$('input[name="cover"]').val(),
+            coilingPeriod:$("#coilingPeriod").val(),
+            subject:$("#subject").val(),
+            publisher:$("#publisher").val(),
+            country:$("#country").val(),
+            pubYear:$("#pubYear").val(),
+            foundedYear:$("#foundedYear").val(),
+            language:languages,
+            pubFeq:$("#pubFeq").val(),
+            Intro:$("#Intro").val(),
+            url:$("#url").val(),
+            carrier:$("#carrier").val(),
+            type:$("#type").val(),
+            pubPattern:$("#pubPattern").val(),
+            pubStatus:$("#pubStatus").val(),
+            reason:$("#reason").val(),
+        }
+        $.ajax({
+            url:"save",
+            type:"post",
+            datatype:"json",
+            data:data,
+            success:function (data) {
+                DuzUtils.notifySuccess("保存成功");
+            },
+            error:function (data) {
+                DuzUtils.notifySuccess("保存失败");
+            }
+        })
+
+    }
+
+    var wireRod;
+
+    $.ajax({
+        url: "findCover",
+        type: "post",
+        dataType: "json",
+        success: function (result) {
+            wireRod = result;
+        }
+    })
+    $(document).ready(function() {
+
+        $.ajax({
+            url:"getOptionValue",
+            type:"post",
+            datatype:"json",
+            success:function (data) {
+                var publishList=data.aaData.publishList
+                if(publishList!=null&&publishList.size!=0){
+                    for(i in publishList){
+                        $("#pubStatus").append("<option value="+publishList[i].code+">"+publishList[i].name+"</option>");
+                    }
+                }
+                var countryList=data.aaData.countryList
+                if(countryList!=null&&countryList.size!=0){
+                    for(i in countryList){
+                        $("#country").append("<option value="+countryList[i].code+">"+countryList[i].name+"</option>");
+                    }
+                }
+                var subjectList=data.aaData.subjectList
+                if(subjectList!=null&&subjectList.size!=0){
+                    for(i in subjectList){
+                        $("#subject").append("<option value="+subjectList[i].code+">"+subjectList[i].name+"</option>");
+                    }
+                }
+                var frequencyList=data.aaData.frequencyList
+                if(frequencyList!=null&&frequencyList.size!=0){
+                    for(i in frequencyList){
+                        $("#pubFeq").append("<option value="+frequencyList[i].code+">"+frequencyList[i].name+"</option>");
+                    }
+                }
+                var carrierList=data.aaData.carrierList
+                if(carrierList!=null&&carrierList.size!=0){
+                    for(i in carrierList){
+                        $("#carrier").append("<option value="+carrierList[i].code+">"+carrierList[i].name+"</option>");
+                    }
+                }
+                var languageList=data.aaData.languageList
+                if(languageList!=null&&languageList.size!=0){
+                    for(i in languageList){
+                        $("#language").append("<option value="+languageList[i].code+">"+languageList[i].name+"</option>");
+                    }
+                }
+                $('#cover').combogrid({
+                    prompt: '输入关键字后自动搜索',
+                    idField: 'id',
+                    textField: 'coverName',
+                    columns: [[
+                        {field: 'id', title: '套ID', hidden: 'true'},
+                        {field: 'coverName', title: '套名称'},
+                        {field: 'eissn', title: 'EISSN'},
+                        {field: 'pissn', title: 'PISSN'},
+                        {field: 'eisbn', title: 'EISBN'},
+                        {field: 'pisbn', title: 'PISBN'},
+                        {field: 'pubCountry', title: '出版国'},
+                        {field: 'publisher', title: '出版社'},
+                        {field: 'subject', title: '学科'},
+                    ]],
+                    onChange: function (q) {
+                        doSearch(q, wireRod, ['coverName', 'eissn', 'pissn', 'eisbn', 'pisbn'], $(this));
+                    },
+                    onShowPanel:function () {
+                        $(this).combogrid('grid').datagrid('loadData', wireRod);
+                    }
+                });
+                    // for(i in coverList){
+                    //     $("#cover").append("<option value="+coverList[i].coverId+">"+coverList[i].coverName+"</option>");
+                    // }
+
+            },
+            error:function (data) {
+                DuzUtils.notifySuccess("操作失败");
+            }
+        })
+
+
+
+        $( "#pubYear,#foundedYear").datetimepicker({
+            format: 'yyyy',
+            weekStart: 1,
+            autoclose: true,
+            startView: 4,
+            minView: 4,
+            forceParse: false,
+            language: 'zh-CN',
+            bootcssVer:3,
+        });
+
+
+        var options = {
+            allowClear:true
+        };
+        $(".select2").css("width","100%").select2(options);
+
+
+
+    });
+
+    function echoSelect2(dom,value){
+        $.each(value,function(index,value){
+            $(dom).append(new Option(value.text, value.id, false, true));
+        });
+        $(dom).trigger("change");
+    }
+
+    $(function () {
+        $("#validation-form").validate({
+            focusInvalid: true,
+            rules: {
+                title:{
+                    required: true
+                },
+                publisher: {
+                    required: true
+                },
+                new_eissn:{
+                     maxlength:9
+                },
+                new_eisbn:{
+                     maxlength:9
+                },
+                new_pissn:{
+                    maxlength:9
+                },
+                new_pisbn:{
+                    maxlength:9
+                },
+            },
+            messages: {
+                title:{
+                    required: "<span style='color:red;'> &nbsp;必填项</span>"
+                },
+                publisher: {
+                    required: "<span style='color:red;'> &nbsp;必填项</span>"
+                },
+                new_eissn:{
+                    maxlength : "<span style='color:red;'> &nbsp;长度最多为9位</span>"
+                },
+                new_eisbn:{
+                    maxlength : "<span style='color:red;'> &nbsp;长度最多为9位</span>"
+                },
+                new_pissn:{
+                    maxlength : "<span style='color:red;'> &nbsp;长度最多为9位</span>"
+                },
+                new_pisbn:{
+                    maxlength : "<span style='color:red;'> &nbsp;长度最多为9位</span>"
+                },
+            },
+
+
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error');//.addClass('has-info');
+                $(e).remove();
+            },
+
+            errorPlacement: function (error, element) {
+                if (element.is('input[type=checkbox]') || element.is('input[type=radio]')) {
+                    var controls = element.closest('div[class*="col-"]');
+                    if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                    else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                }
+                else if (element.is('.select2')) {
+                    error.insertAfter(element.siblings('[class*="select2-container"]:eq(0)'));
+                }
+                else if (element.is('.chosen-select')) {
+                    error.insertAfter(element.siblings('[class*="chosen-container"]:eq(0)'));
+                }
+                else error.insertAfter(element);
+            },
+
+            submitHandler: function (form) {
+            },
+            invalidHandler: function (form) {
+            }
+        });
+    })
+
+    function doSearch(q,data,searchList,ele) {
+        ele.combogrid('grid').datagrid('loadData', []);
+        if (q == "") {
+            ele.combogrid('grid').datagrid('loadData', data);
+            return;
+        }
+        var rows = [];
+        $.each(data, function (i, obj) {
+            for (var p in searchList) {
+                var v = obj[searchList[p]];
+                if (!!v && v.toString().indexOf(q) >= 0) {
+                    rows.push(obj);
+                    break;
+                }
+            }
+        });
+        if (rows.length == 0) {
+            ele.combogrid('grid').datagrid('loadData', []);
+            return;
+        }
+        ele.combogrid('grid').datagrid('loadData', rows);
+    }
+
+</script>

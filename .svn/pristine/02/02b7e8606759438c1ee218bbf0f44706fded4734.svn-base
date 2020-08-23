@@ -1,0 +1,153 @@
+body {
+  background-color: #F0F2F5;
+  font-family: "微软雅黑";
+}
+.main,
+.left,
+.right {
+  height: 100%;
+}
+.main {
+  margin-left: 0;
+  margin-right: 0;
+}
+.left {
+  width: 240px;
+  background-color: #001D3B;
+}
+.left .navbar {
+  background-color: #002F5F;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+.left .navbar-brand {
+  width: 100%;
+}
+.menu {
+  margin-top: 20px;
+}
+.menu-item {
+  color: #A6ADB4;
+  padding: 12px 20px;
+  margin-top: 1px;
+  padding-top: 16px;
+  position: relative;
+  white-space: nowrap;
+  transition: all .2s;
+}
+.menu-item.active,
+.menu-item:hover {
+  background-color: #1890FF;
+  color: #fff;
+}
+.menu-icon {
+  font-size: 16px;
+  margin-top: -3px;
+}
+.menu-text {
+  display: inline-block;
+  margin-left: 3px;
+  font-size: 14px;
+}
+.menu-text a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.menu-arrow {
+  height: 8px;
+  width: 8px;
+  border: solid #fff;
+  border-width: 1px 1px 0 0;
+  display: inline-block;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  right: 25px;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.navbar-toggler {
+  border: 0;
+  padding: 0.25rem;
+}
+.left-collapse {
+  width: 62px;
+}
+.left-collapse .title-text,
+.left-collapse .menu-text,
+.left-collapse .menu-arrow {
+  display: none;
+}
+.left-collapse .menu-item {
+  text-align: center;
+}
+.title-text,
+.left,
+.menu-text,
+.menu-arrow {
+  transition: width .2s;
+}
+.right {
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  flex-direction: column;
+}
+.right > .navbar {
+  background-color: #fff;
+}
+.right > .navbar .circle {
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  background-color: #1890FF;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.right .navbar-toggler i {
+  vertical-align: middle;
+}
+.right > .content {
+  flex: 1;
+  overflow: auto;
+  padding: 10px;
+}
+.right > .content.padding {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.pagination {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+.page-item {
+  display: inline-block;
+}
+.page-item.active .page-link {
+  color: #fff;
+  background-color: #1890FF;
+  border: 0;
+}
+.page-link {
+  display: inline-block;
+  border: 1px solid #D9D9D9;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.page-link,
+.page-link:hover,
+.page-link:active,
+.page-link:focus {
+  text-decoration: none;
+  color: #222;
+}
+.page-link:hover {
+  background-color: #fafafa;
+}

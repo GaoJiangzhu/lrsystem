@@ -1,0 +1,49 @@
+#line-chart {
+    height: 350px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 2px;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+}
+
+.card-5 {
+    display: flex;
+}
+
+@card-colors: #4DCBA4 #4DCB73 #36CBCB #74BCFF #57ADFD;
+.generate-card-colors(length(@card-colors));
+.generate-card-colors(@n, @i: 1) when (@i =< @n) {
+    .card-@{i} {
+        background-color: extract(@card-colors, @i);
+    }
+    .generate-card-colors(@n, (@i + 1));
+}
+
+.panel {
+    margin-top: 25px;
+}
+
+.panel-head {
+    padding: 25px;
+    display: flex;
+    border-bottom: 0;
+    .form-inline {
+        margin-left: 20px;
+        position: relative;
+        i {
+            position: absolute;
+            top: 4px;
+            left: 5px;
+            color: #C0C0C0;
+        }
+        input {
+            padding-left: 32px;
+            padding-top: 4px;
+            padding-bottom: 3px;
+        }
+    }
+}

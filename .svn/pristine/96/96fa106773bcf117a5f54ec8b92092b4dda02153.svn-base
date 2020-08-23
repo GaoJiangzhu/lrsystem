@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--suppress ALL-->
+<html xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link href="../new/assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../new/css/style.css"/>
+    <link rel="stylesheet" href="../new/assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../new/assets/css/font-awesome.min.css"/>
+    <link href="../new/Widget/icheck/icheck.css" rel="stylesheet" type="text/css"/>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="../new/assets/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="../new/assets/css/ace-ie.min.css"/>
+    <![endif]-->
+    <script src="../new/js/jquery-1.9.1.min.js"></script>
+    <script src="../new/assets/js/bootstrap.min.js"></script>
+    <script src="../new/assets/layer/layer.js" type="text/javascript"></script>
+    <script src="../new/assets/laydate/laydate.js" type="text/javascript"></script>
+    <script src="../business/common.js"></script>
+    <script type="text/javascript" src="../business/base.js"></script>
+    <script src="../ace/components/jquery-validation/dist/jquery.validate.js"></script>
+    <title>添加产品分类</title>
+</head>
+<body>
+<div class="type_style">
+    <div class="type_title">参数信息维护</div>
+    <div class="type_content">
+        <div class="Operate_btn">
+            <a href="javascript:void(0)" class="btn  btn-warning" onclick="edit()"><i class="icon-edit align-top bigger-125"></i>编辑</a>
+            <a href="javascript:void(0)" class="btn  btn-success"><i class="icon-ok align-top bigger-125"></i>禁用</a>
+            <a href="javascript:void(0)" class="btn  btn-danger" onclick="del()"><i
+                    class="icon-trash   align-top bigger-125"></i>删除</a>
+        </div>
+        <!--<form method="post" class="form form-horizontal" id="form-user-add">-->
+            <input type="hidden" id="pId" name="pId" th:value="${id}"/>
+            <input type="hidden" id="id" name="id"/>
+            <input type="hidden" id="isParent" name="isParent" th:value="${isParent}"/>
+            <div class="Operate_cont clearfix">
+                <label class="form-label"><span class="c-red">*</span>名称：</label>
+                <div class="formControls ">
+                    <input type="text" class="input-text" value="" placeholder="名称" id="name"
+                           name="name">
+                </div>
+            </div>
+            <div class="Operate_cont clearfix">
+                <label class="form-label"><span class="c-red">*</span>编码：</label>
+                <div class="formControls ">
+                    <input type="text" class="input-text" value="" placeholder="编码" id="code"
+                           name="code">
+                </div>
+            </div>
+            <div class="">
+                <div class="" style=" text-align:center">
+                    <input class="btn btn-primary radius" onclick="submit()" value="提交">
+                </div>
+            </div>
+        <!--</form>-->
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="../new/Widget/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="../new/Widget/Validform/5.3.2/Validform.min.js"></script>
+<script type="text/javascript" src="../new/assets/layer/layer.js"></script>
+<script type="text/javascript" src="../new/js/H-ui.js"></script>
+<script type="text/javascript" src="../new/js/H-ui.admin.js"></script>
+<script type="text/javascript">
+    function edit(){
+        var id = $("#pId").val();
+        if (id == ""){
+            DuzUtils.notifyWarning("请选择一个节点");
+            return;
+        }
+        $.ajax({
+            url:"edit",
+            type:"get",
+            datatype:"json",
+            data:{id:id},
+            success:function (data) {
+                console.log(data);
+                if (data.status == 0){
+                    var data = data.aaData;
+                    $("#name").val(data.name);
+                    $("#code").val(data.code);
+                    $("#id").val(data.id);
+                    $("#pId").val(data.pId);
+                }else{
+                    DuzUtils.notifyError(data.msg);
+                }
+            },
+            error:function (data) {
+                console.log(data);
+            }
+        })
+    }
+    
+    function del() {
+        if ($("#pId") == ""){
+            notifyWarning("请选择一个节点");
+            return;
+        }
+        var id = $("#pId").val();
+        confrim($("#isParent").val() == "true"?"是否删除所有子节点？": "确认删除？", "del", {id:id}, function (data) {
+            if (data.status == 0){
+                window.parent.location.href="/organ/list?promot="+promot.success;
+
+            }else{
+                DuzUtils.notifyError(data.msg);
+            }
+        }, function (data) {
+        });
+    }
+
+    function submit(){
+        var data={
+            id:$("#id").val(),
+            pId:$("#pId").val(),
+            name:$("#name").val(),
+            code:$("#code").val()
+        }
+        $.ajax({
+            url:"save",
+            type:"get",
+            datatype:"json",
+            data:data,
+            success:function (data) {
+                console.log(data);
+                if (data.status == 0){
+                    window.parent.location.href="/organ/list?promot="+promot.success;
+                } else if (data.status == 1){
+                    DuzUtils.notifyError(data.msg);
+                }else{
+                    DuzUtils.notifyWarning(data.msg);
+                }
+            },
+            error:function (data) {
+                console.log(data);
+            }
+        })
+    }
+    $(function () {
+        $('.skin-minimal input').iCheck({
+            checkboxClass: 'icheckbox-blue',
+            radioClass: 'iradio-blue',
+            increaseArea: '20%'
+        });
+
+        $("#form-user-add").Validform({
+            tiptype: 2,
+            callback: function (form) {
+                form[0].submit();
+                var index = parent.layer.getFrameIndex(window.name);
+                parent.$('.btn-refresh').click();
+                parent.layer.close(index);
+            }
+        });
+    });
+</script>
+</body>
+</html>

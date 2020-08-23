@@ -1,0 +1,94 @@
+#pay-chart {
+  height: 200px;
+}
+#bar-chart {
+  height: 200px;
+}
+#bar-chart > div,
+#pay-chart > div {
+  margin: auto;
+}
+.card-list {
+  margin-bottom: 25px;
+}
+.card {
+  padding: 20px;
+  border-radius: 2px;
+  height: 100%;
+  color: #fff;
+}
+.card td {
+  padding-right: 10px;
+}
+.card-head {
+  margin-bottom: 15px;
+  position: relative;
+}
+.card-head .material-icons {
+  float: right;
+  font-size: 1rem;
+  margin-top: 4px;
+}
+.card-1 {
+  background-color: #4DCB73;
+}
+.card-2 {
+  background-color: #36CBCB;
+}
+.card-3 {
+  background-color: #74BCFF;
+}
+.panel-list {
+  padding-left: 10px;
+}
+.pay-chart-info {
+  margin-bottom: 15px;
+}
+.list-panel {
+  border-radius: 2px;
+  background-color: #fff;
+}
+.list-panel + .list-panel {
+  margin-top: 25px;
+}
+.list-panel-head {
+  padding: 10px;
+  display: flex;
+  border-bottom: 1px solid #E8E8E8;
+}
+.list-panel-head .btn {
+  margin-left: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.table {
+  margin-bottom: 0;
+}
+.list-panel-footer {
+  padding: 15px;
+  display: flex;
+}
+.list-panel-footer select {
+  width: auto;
+  display: inline-block;
+}
+.star {
+  color: #FF8C22;
+}
+.search-layout {
+  background-color: #FAFAFA;
+  padding: 10px;
+}
+.search {
+  max-width: 280px;
+  position: relative;
+}
+.search input {
+  padding-right: calc(.75rem + 24px);
+}
+.search i {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  cursor: pointer;
+}
